@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Clases de Matemáticas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+    <div id="home-screen" class="home-container">
+        <h1 style="color: var(--accent); text-align: center; font-size: 3rem; margin-top: 50px;"> Clases 1° Medio</h1>
+        <div id="class-grid" class="class-grid"></div>
+    </div>
+
+    <div id="app-screen" class="app-container hidden">
+        <aside class="sidebar">
+            <h2 style="color: var(--accent)">Módulos</h2>
+            <ul id="module-list"></ul>
+        </aside>
+        
+        <main class="content-area">
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-toggle" onclick="volverAlInicio()">🏠 Volver al Menú</button>
+                <button class="btn-toggle" onclick="toggleSidebar()">☰ Ocultar / Mostrar Módulos</button>
+            </div>
+            
+            <div style="height: 10px; background: #334155; border-radius: 5px; margin-bottom: 20px;">
+                <div id="bar" style="height: 100%; background: var(--primary); width: 0%; transition: 0.5s;"></div>
+            </div>
+            
+            <h1 id="class-title"></h1>
+            <div id="dynamic-body"></div>
+            
+            <div style="margin-top: auto; padding-top: 20px;">
+                <button class="btn" onclick="prevStep()">Anterior</button>
+                <button class="btn btn-primary" onclick="nextStep()">Siguiente</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/content.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
