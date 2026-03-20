@@ -968,8 +968,250 @@ const bancoDeUnidades = [
                     }
         ]
     },
-           
+           ,
+            {
+                id: "u2_clase4",
+                nombre: "Clase 4: Modelamiento de Crecimiento Exponencial",
+                diapositivas: [
+                    {
+                        titulo: "1. Definición Formal del Crecimiento Exponencial",
+                        contenido: `
+                            <h2>Estructura del Modelo Matemático</h2>
+                            <p>El crecimiento exponencial es un fenómeno donde una magnitud aumenta a un ritmo que es proporcional a su valor actual. Matemáticamente, se modela utilizando potencias donde la variable independiente (generalmente el tiempo) se ubica en el exponente.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">Ecuación General</h3>
+                                <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                                    $$N(t) = N_0 \\cdot a^t$$
+                                </div>
+                                <ul style="line-height: 1.8;">
+                                    <li><strong>$N(t)$:</strong> Cantidad final tras un tiempo $t$.</li>
+                                    <li><strong>$N_0$:</strong> Cantidad inicial (población base cuando $t = 0$).</li>
+                                    <li><strong>$a$:</strong> Factor de crecimiento (base de la potencia). Para que exista crecimiento, se exige que $a > 1$.</li>
+                                    <li><strong>$t$:</strong> Tiempo transcurrido (exponente).</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Modelamiento: Análisis de un Fenómeno",
+                        contenido: `
+                            <h2>Construcción del Modelo Exponencial</h2>
+                            <p>Observe cómo se traduce una situación real a una expresión algebraica utilizando potencias.</p>
+                            
+                            <div class="card" style="border-left-color: #10b981;">
+                                <h3 style="color: #10b981;">Situación: Reproducción Celular</h3>
+                                <p>Un biólogo aísla una muestra de $50$ células. Bajo condiciones óptimas, se observa que la cantidad de células <strong>se duplica</strong> cada hora.</p>
+                                
+                                <div class="step" style="background: rgba(16, 185, 129, 0.05); margin-top: 15px;">
+                                    <b>Identificación de variables:</b><br>
+                                    - Población inicial ($N_0$): $50$<br>
+                                    - Factor de crecimiento ($a$): $2$ (por la duplicación)<br>
+                                    - Función que modela el crecimiento tras $t$ horas: 
+                                    $$N(t) = 50 \\cdot 2^t$$
+                                </div>
+                                <p style="margin-top: 10px;"><em>Demostración para $t=3$ horas:</em> $N(3) = 50 \\cdot 2^3 = 50 \\cdot 8 = \\mathbf{400}$ células.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Resolución Conjunta",
+                        contenido: `
+                            <h2>Aplicación en Pizarra</h2>
+                            <p>Se solicita analizar el siguiente contexto y formular la ecuación correspondiente antes de proceder al cálculo.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr;">
+                                <div class="step">
+                                    <strong>Problema:</strong> Una inversión financiera inicial de $\\$10.000$ triplica su valor cada década debido a intereses compuestos excepcionales. <br><br>
+                                    <b>A)</b> Formule la expresión que modela el capital tras $t$ décadas.<br>
+                                    <b>B)</b> Determine el capital acumulado tras $4$ décadas.
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u2c4').classList.toggle('hidden')">Desplegar Resolución</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u2c4" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Analítico:</h3>
+                                <p><b>A) Formulación del modelo:</b><br>
+                                Valor inicial $N_0 = 10.000$. Factor de crecimiento $a = 3$ (triplica).<br>
+                                Ecuación: $C(t) = 10.000 \\cdot 3^t$</p>
+                                
+                                <p><b>B) Evaluación para $t=4$:</b><br>
+                                $C(4) = 10.000 \\cdot 3^4$<br>
+                                $C(4) = 10.000 \\cdot 81 = \\mathbf{810.000}$</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Lea los siguientes enunciados, formule el modelo exponencial respectivo en su cuaderno y determine el valor solicitado. Tiempo asignado: 12 minutos.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>Caso 1:</b> Un video viral comienza con $100$ visualizaciones. Cada día que pasa, el número de visualizaciones se cuadruplica (se multiplica por $4$). ¿Cuántas visualizaciones tendrá el día $3$?</div>
+                                <div class="step"><b>Caso 2:</b> Una plaga de insectos comienza con $5$ especímenes. Si su población se quintuplica ($\\times 5$) cada semana, exprese en forma de potencia la población tras $4$ semanas.</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: #0f172a; padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">12:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(720)" style="margin-top: 15px;">⏳ Iniciar Tiempo (12 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u2c4').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
+
+                            <div id="resp-indep-u2c4" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="font-size: 1.1rem; line-height: 1.6;">
+                                    <li><b>Caso 1:</b> Modelo: $V(t) = 100 \\cdot 4^t \\implies V(3) = 100 \\cdot 4^3 = 100 \\cdot 64 = \\mathbf{6.400}$ visualizaciones.</li>
+                                    <li><b>Caso 2:</b> Modelo: $P(t) = 5 \\cdot 5^t \\implies P(4) = 5 \\cdot 5^4 = \\mathbf{5^5}$ insectos (o $3.125$).</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: Proyección Matemática",
+                        contenido: `
+                            <div class="card" style="border-left-color: #f59e0b;">
+                                <h2 style="color: #f59e0b;">Análisis de Límites (Ticket de Salida)</h2>
+                                <p>Considere el modelo de crecimiento exponencial básico: $N(t) = 2 \\cdot 3^t$.</p>
+                                
+                                <div class="step" style="background: rgba(245, 158, 11, 0.1); margin-top: 20px;">
+                                    <b>Pregunta de Razonamiento Lógico:</b><br>
+                                    Si observamos la gráfica de este modelo a medida que el tiempo $t$ avanza hacia el infinito, ¿qué ocurre con el valor de la población $N(t)$? Escriba una conclusión formal en su cuaderno sobre la velocidad de crecimiento de las potencias frente a otras operaciones algebraicas (como la multiplicación simple).
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "u2_clase5",
+                nombre: "Clase 5: Modelamiento de Decrecimiento Exponencial",
+                diapositivas: [
+                    {
+                        titulo: "1. Definición Formal del Decrecimiento",
+                        contenido: `
+                            <h2>Estructura del Modelo Matemático</h2>
+                            <p>Contrario al crecimiento, el decrecimiento exponencial modela magnitudes que disminuyen progresivamente, perdiendo siempre una misma proporción de su valor en cada intervalo temporal.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #ef4444;">
+                                <h3 style="color: #ef4444;">Diferencia en el Factor de Cambio</h3>
+                                <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                                    $$N(t) = N_0 \\cdot a^t$$
+                                </div>
+                                <p>La estructura algebraica es idéntica a la del crecimiento exponencial. Sin embargo, para que el modelo represente una <strong>disminución</strong>, el factor $a$ (la base de la potencia) debe ser una fracción o decimal ubicado estrictamente entre cero y uno.</p>
+                                <div style="text-align: center; font-style: italic; font-weight: bold; margin: 15px 0;">
+                                    Condición de decrecimiento: $0 < a < 1$
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Modelamiento: Vida Media y Depreciación",
+                        contenido: `
+                            <h2>Construcción del Modelo de Reducción</h2>
+                            <p>El decrecimiento exponencial tiene aplicaciones directas en economía y física.</p>
+                            
+                            <div class="card" style="border-left-color: #10b981;">
+                                <h3 style="color: #10b981;">Situación: Desintegración de un Fármaco</h3>
+                                <p>Se administra una dosis de $400$ mg de un medicamento a un paciente. El metabolismo del cuerpo elimina <strong>la mitad</strong> de la sustancia presente en la sangre cada hora.</p>
+                                
+                                <div class="step" style="background: rgba(16, 185, 129, 0.05); margin-top: 15px;">
+                                    <b>Identificación de variables:</b><br>
+                                    - Cantidad inicial ($N_0$): $400$<br>
+                                    - Factor de decrecimiento ($a$): $\\frac{1}{2}$ (por la reducción a la mitad)<br>
+                                    - Función que modela la sustancia tras $t$ horas: 
+                                    $$M(t) = 400 \\cdot (\\frac{1}{2})^t$$
+                                </div>
+                                <p style="margin-top: 10px;"><em>Cantidad tras $3$ horas:</em> $M(3) = 400 \\cdot (\\frac{1}{2})^3 = 400 \\cdot \\frac{1}{8} = \\mathbf{50}$ mg.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Resolución Conjunta",
+                        contenido: `
+                            <h2>Aplicación en Pizarra</h2>
+                            <p>Formulemos la ecuación matemática para la siguiente situación económica y calculemos su depreciación.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr;">
+                                <div class="step">
+                                    <strong>Problema:</strong> Un equipo tecnológico es adquirido por $\\$1.000.000$. Debido a su rápida obsolescencia, su valor se reduce a <strong>la décima parte</strong> (se multiplica por $\\frac{1}{10}$) de su valor anterior por cada año que transcurre.<br><br>
+                                    <b>A)</b> Modele la ecuación de depreciación anual.<br>
+                                    <b>B)</b> Calcule el valor del equipo transcurridos $2$ años.
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u2c5').classList.toggle('hidden')">Desplegar Resolución</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u2c5" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(239, 68, 68, 0.1); border-left: 5px solid #ef4444; border-radius: 8px;">
+                                <h3 style="color: #ef4444; margin-top: 0;">Desarrollo Analítico:</h3>
+                                <p><b>A) Formulación del modelo:</b><br>
+                                Valor inicial $N_0 = 1.000.000$. Factor de reducción $a = \\frac{1}{10}$.<br>
+                                Ecuación: $V(t) = 1.000.000 \\cdot (\\frac{1}{10})^t$</p>
+                                
+                                <p><b>B) Evaluación para $t=2$:</b><br>
+                                $V(2) = 1.000.000 \\cdot (\\frac{1}{10})^2$<br>
+                                $V(2) = 1.000.000 \\cdot \\frac{1}{100} = \\mathbf{\\$10.000}$</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Construya el modelo exponencial y resuelva los siguientes problemas. Dispone de 10 minutos para su resolución.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>Caso 1:</b> El material radiactivo inicial en un reactor es de $81$ gramos. Si su masa decae a <strong>un tercio</strong> (se multiplica por $\\frac{1}{3}$) cada día, determine la cantidad de gramos restantes en el día $4$.</div>
+                                <div class="step"><b>Caso 2:</b> Un torneo de tenis comienza con $64$ participantes. En cada ronda, se elimina a <strong>la mitad</strong> de los jugadores. Escriba el modelo de la cantidad de jugadores activos tras la ronda $r$ y verifique cuántos quedan tras $5$ rondas.</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: #0f172a; padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">10:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u2c5').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
+
+                            <div id="resp-indep-u2c5" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="font-size: 1.1rem; line-height: 1.6;">
+                                    <li><b>Caso 1:</b> $M(4) = 81 \\cdot (\\frac{1}{3})^4 = 81 \\cdot \\frac{1}{81} = \\mathbf{1}$ gramo.</li>
+                                    <li><b>Caso 2:</b> $J(r) = 64 \\cdot (\\frac{1}{2})^r \\implies J(5) = 64 \\cdot \\frac{1}{32} = \\mathbf{2}$ jugadores (la final).</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: Conexión Curricular",
+                        contenido: `
+                            <div class="card" style="border-left-color: #f59e0b;">
+                                <h2 style="color: #f59e0b;">Síntesis de Propiedades (Ticket de Salida)</h2>
+                                <p>Hemos definido el decrecimiento empleando fracciones como base, por ejemplo: $y = 100 \\cdot (\\frac{1}{2})^t$.</p>
+                                
+                                <div class="step" style="background: rgba(245, 158, 11, 0.1); margin-top: 20px;">
+                                    <b>Pregunta de Integración Algebraica:</b><br>
+                                    Recordando la regla de las potencias con exponente negativo vista en la Clase 1, reescriba el modelo $y = 100 \\cdot (\\frac{1}{2})^t$ de manera que su base no sea una fracción, sino un número entero. 
+                                    <br><br>
+                                    <em>Pista: ¿Cómo transformamos el $\\frac{1}{2}$ en un $2$?</em>
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            }
+
+
+
 
         ]
     },
 ]
+
+
+
+
+
