@@ -674,10 +674,142 @@ const bancoDeUnidades = [
                     }
                 ]
             },
-,,
-            {
+ {
                 id: "u2_clase2",
-                nombre: "Clase 2: Multiplicación y División de Potencias",
+                nombre: "Clase 2: Potencias de base racional y exponente entero",
+                diapositivas: [
+                    {
+                        titulo: "1. Potencias con base fraccionaria",
+                        contenido: `
+                            <h2>Concepto Fundamental</h2>
+                            <p>Hasta ahora hemos trabajado con bases enteras. Cuando la base de una potencia es un número racional (una fracción) y su exponente es un número entero positivo, <strong>el exponente se aplica tanto al numerador como al denominador</strong> de la fracción.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">Exponente Entero Positivo</h3>
+                                <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                                    $$(\\frac{a}{b})^n = \\frac{a^n}{b^n}$$
+                                </div>
+                                <p><strong>Condiciones:</strong> $a, b \\in \\mathbb{Z}$, con $b \\neq 0$ y $n \\in \\mathbb{N}$.</p>
+                                
+                                <div class="step" style="background: rgba(59, 130, 246, 0.05); margin-top: 15px;">
+                                    <b>Ejemplo:</b> $(\\frac{2}{3})^3 = \\frac{2^3}{3^3} = \\frac{2 \\cdot 2 \\cdot 2}{3 \\cdot 3 \\cdot 3} = \\mathbf{\\frac{8}{27}}$
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Exponentes Cero y Negativos",
+                        contenido: `
+                            <h2>Propiedades Especiales en Fracciones</h2>
+                            <p>Las reglas del exponente cero y del exponente negativo operan bajo la misma lógica que en los números enteros, pero aplicadas a la estructura de una fracción.</p>
+                            
+                            <div class="card" style="margin-bottom: 20px; border-left-color: #10b981;">
+                                <h3 style="color: #10b981;">Exponente Cero</h3>
+                                <p>Toda fracción distinta de cero elevada a un exponente cero da como resultado $1$.</p>
+                                <div style="text-align: center; font-size: 1.2em; margin: 10px 0;">
+                                    $$(\\frac{a}{b})^0 = 1$$
+                                </div>
+                            </div>
+
+                            <div class="card" style="border-left-color: #ef4444;">
+                                <h3 style="color: #ef4444;">Exponente Negativo</h3>
+                                <p>Si el exponente es negativo, <strong>se invierte la fracción base (el numerador pasa a ser denominador y viceversa) y el exponente cambia a positivo</strong>. Luego, se resuelve normalmente.</p>
+                                <div style="text-align: center; font-size: 1.2em; margin: 10px 0;">
+                                    $$(\\frac{a}{b})^{-n} = (\\frac{b}{a})^n = \\frac{b^n}{a^n}$$
+                                </div>
+                                
+                                <div class="step" style="background: rgba(239, 68, 68, 0.05); margin-top: 15px;">
+                                    <b>Ejemplo:</b> $(\\frac{4}{5})^{-2} = (\\frac{5}{4})^2 = \\frac{5^2}{4^2} = \\mathbf{\\frac{25}{16}}$
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Análisis Conjunto",
+                        contenido: `
+                            <h2>Resolución en Pizarra</h2>
+                            <p>Desarrollemos las siguientes expresiones aplicando las propiedades de potencias de base racional. Ponga especial atención en los signos negativos de las bases y de los exponentes.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="step" style="font-size: 1.5rem; text-align: center;">
+                                    <b>1)</b> $(\\frac{1}{4})^3$
+                                </div>
+                                <div class="step" style="font-size: 1.5rem; text-align: center;">
+                                    <b>2)</b> $(-\\frac{2}{5})^2$
+                                </div>
+                                <div class="step" style="font-size: 1.5rem; text-align: center;">
+                                    <b>3)</b> $(\\frac{3}{7})^{-2}$
+                                </div>
+                                <div class="step" style="font-size: 1.5rem; text-align: center;">
+                                    <b>4)</b> $(-\\frac{1}{6})^{-3}$
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u2c3').classList.toggle('hidden')">Ver Desarrollo</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u2c3" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <h3 style="color: #3b82f6; margin-top: 0;">Soluciones paso a paso:</h3>
+                                <ul style="line-height: 1.8; font-size: 1.1rem;">
+                                    <li><b>1)</b> Se aplica a ambos términos: $\\frac{1^3}{4^3} = \\mathbf{\\frac{1}{64}}$.</li>
+                                    <li><b>2)</b> Base negativa, exponente par $\\implies$ resultado positivo. $(-\\frac{2}{5}) \\cdot (-\\frac{2}{5}) = \\mathbf{\\frac{4}{25}}$.</li>
+                                    <li><b>3)</b> Exponente negativo $\\implies$ Se invierte la base. $(\\frac{7}{3})^2 = \\frac{7^2}{3^2} = \\mathbf{\\frac{49}{9}}$.</li>
+                                    <li><b>4)</b> Se invierte la base y el exponente queda positivo. $(-\\frac{6}{1})^3 = (-6)^3 = \\mathbf{-216}$.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Desarrolle los siguientes ejercicios en su cuaderno, anotando el paso a paso. Dispone de 10 minutos para completar esta actividad.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>A)</b> $(\\frac{2}{7})^2$</div>
+                                <div class="step"><b>B)</b> $(-\\frac{3}{4})^3$</div>
+                                <div class="step"><b>C)</b> $(\\frac{5}{2})^{-3}$</div>
+                                <div class="step"><b>D)</b> $(-\\frac{1}{8})^{-2}$</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: #0f172a; padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">10:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u2c3').classList.toggle('hidden')">👁️ Mostrar Respuestas</button>
+                            </div>
+
+                            <div id="resp-indep-u2c3" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <p style="font-size: 1.4rem;">
+                                    <b>A)</b> $\\frac{4}{49}$ &nbsp;|&nbsp; <b>B)</b> $-\\frac{27}{64}$ &nbsp;|&nbsp; <b>C)</b> $(\\frac{2}{5})^3 = \\mathbf{\\frac{8}{125}}$ &nbsp;|&nbsp; <b>D)</b> $(-8)^2 = \\mathbf{64}$
+                                </p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: Análisis de Error",
+                        contenido: `
+                            <div class="card" style="border-left-color: #f59e0b;">
+                                <h2 style="color: #f59e0b;">Identificación de Errores Comunes</h2>
+                                <p>Observe con atención el siguiente desarrollo realizado por un estudiante al intentar resolver una potencia de exponente negativo:</p>
+                                
+                                <div class="step" style="font-size: 1.5rem; text-align: center; font-style: italic; background: #fff; color: #000; padding: 15px; border-radius: 8px;">
+                                    $(\\frac{2}{5})^{-2} = (-\\frac{5}{2})^2 = \\frac{25}{4}$
+                                </div>
+                                
+                                <div class="step" style="background: rgba(245, 158, 11, 0.1); margin-top: 20px;">
+                                    <b>Pregunta de Análisis:</b><br>
+                                    Aunque el resultado numérico es correcto, hay un error conceptual grave en el primer paso del desarrollo. Escriba en su cuaderno cuál fue el error que cometió el estudiante con los signos y explique por qué ocurrió.
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "u2_clase3",
+                nombre: "Clase 3: Multiplicación y División de Potencias",
                 diapositivas: [
                     {
                         titulo: "1. Multiplicación y División de Igual Base",
@@ -836,148 +968,8 @@ const bancoDeUnidades = [
                     }
         ]
     },
-            {
-                id: "u2_clase3",
-                nombre: "Clase 3: Potencias de base racional y exponente entero",
-                diapositivas: [
-                    {
-                        titulo: "1. Potencias con base fraccionaria",
-                        contenido: `
-                            <h2>Concepto Fundamental</h2>
-                            <p>Hasta ahora hemos trabajado con bases enteras. Cuando la base de una potencia es un número racional (una fracción) y su exponente es un número entero positivo, <strong>el exponente se aplica tanto al numerador como al denominador</strong> de la fracción.</p>
-                            
-                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
-                                <h3 style="color: #3b82f6;">Exponente Entero Positivo</h3>
-                                <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
-                                    $$(\\frac{a}{b})^n = \\frac{a^n}{b^n}$$
-                                </div>
-                                <p><strong>Condiciones:</strong> $a, b \\in \\mathbb{Z}$, con $b \\neq 0$ y $n \\in \\mathbb{N}$.</p>
-                                
-                                <div class="step" style="background: rgba(59, 130, 246, 0.05); margin-top: 15px;">
-                                    <b>Ejemplo:</b> $(\\frac{2}{3})^3 = \\frac{2^3}{3^3} = \\frac{2 \\cdot 2 \\cdot 2}{3 \\cdot 3 \\cdot 3} = \\mathbf{\\frac{8}{27}}$
-                                </div>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "2. Exponentes Cero y Negativos",
-                        contenido: `
-                            <h2>Propiedades Especiales en Fracciones</h2>
-                            <p>Las reglas del exponente cero y del exponente negativo operan bajo la misma lógica que en los números enteros, pero aplicadas a la estructura de una fracción.</p>
-                            
-                            <div class="card" style="margin-bottom: 20px; border-left-color: #10b981;">
-                                <h3 style="color: #10b981;">Exponente Cero</h3>
-                                <p>Toda fracción distinta de cero elevada a un exponente cero da como resultado $1$.</p>
-                                <div style="text-align: center; font-size: 1.2em; margin: 10px 0;">
-                                    $$(\\frac{a}{b})^0 = 1$$
-                                </div>
-                            </div>
-
-                            <div class="card" style="border-left-color: #ef4444;">
-                                <h3 style="color: #ef4444;">Exponente Negativo</h3>
-                                <p>Si el exponente es negativo, <strong>se invierte la fracción base (el numerador pasa a ser denominador y viceversa) y el exponente cambia a positivo</strong>. Luego, se resuelve normalmente.</p>
-                                <div style="text-align: center; font-size: 1.2em; margin: 10px 0;">
-                                    $$(\\frac{a}{b})^{-n} = (\\frac{b}{a})^n = \\frac{b^n}{a^n}$$
-                                </div>
-                                
-                                <div class="step" style="background: rgba(239, 68, 68, 0.05); margin-top: 15px;">
-                                    <b>Ejemplo:</b> $(\\frac{4}{5})^{-2} = (\\frac{5}{4})^2 = \\frac{5^2}{4^2} = \\mathbf{\\frac{25}{16}}$
-                                </div>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "3. Práctica Guiada: Análisis Conjunto",
-                        contenido: `
-                            <h2>Resolución en Pizarra</h2>
-                            <p>Desarrollemos las siguientes expresiones aplicando las propiedades de potencias de base racional. Ponga especial atención en los signos negativos de las bases y de los exponentes.</p>
-                            
-                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
-                                <div class="step" style="font-size: 1.5rem; text-align: center;">
-                                    <b>1)</b> $(\\frac{1}{4})^3$
-                                </div>
-                                <div class="step" style="font-size: 1.5rem; text-align: center;">
-                                    <b>2)</b> $(-\\frac{2}{5})^2$
-                                </div>
-                                <div class="step" style="font-size: 1.5rem; text-align: center;">
-                                    <b>3)</b> $(\\frac{3}{7})^{-2}$
-                                </div>
-                                <div class="step" style="font-size: 1.5rem; text-align: center;">
-                                    <b>4)</b> $(-\\frac{1}{6})^{-3}$
-                                </div>
-                            </div>
-
-                            <div style="text-align: center; margin-top: 20px;">
-                                <button class="btn" onclick="document.getElementById('resp-guiadas-u2c3').classList.toggle('hidden')">Ver Desarrollo</button>
-                            </div>
-                            
-                            <div id="resp-guiadas-u2c3" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
-                                <h3 style="color: #3b82f6; margin-top: 0;">Soluciones paso a paso:</h3>
-                                <ul style="line-height: 1.8; font-size: 1.1rem;">
-                                    <li><b>1)</b> Se aplica a ambos términos: $\\frac{1^3}{4^3} = \\mathbf{\\frac{1}{64}}$.</li>
-                                    <li><b>2)</b> Base negativa, exponente par $\\implies$ resultado positivo. $(-\\frac{2}{5}) \\cdot (-\\frac{2}{5}) = \\mathbf{\\frac{4}{25}}$.</li>
-                                    <li><b>3)</b> Exponente negativo $\\implies$ Se invierte la base. $(\\frac{7}{3})^2 = \\frac{7^2}{3^2} = \\mathbf{\\frac{49}{9}}$.</li>
-                                    <li><b>4)</b> Se invierte la base y el exponente queda positivo. $(-\\frac{6}{1})^3 = (-6)^3 = \\mathbf{-216}$.</li>
-                                </ul>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "4. Práctica Independiente",
-                        contenido: `
-                            <h2>Ejercitación Individual</h2>
-                            <p>Desarrolle los siguientes ejercicios en su cuaderno, anotando el paso a paso. Dispone de 10 minutos para completar esta actividad.</p>
-                            
-                            <div class="info-grid">
-                                <div class="step"><b>A)</b> $(\\frac{2}{7})^2$</div>
-                                <div class="step"><b>B)</b> $(-\\frac{3}{4})^3$</div>
-                                <div class="step"><b>C)</b> $(\\frac{5}{2})^{-3}$</div>
-                                <div class="step"><b>D)</b> $(-\\frac{1}{8})^{-2}$</div>
-                            </div>
-
-                            <div style="text-align: center; margin-top: 30px; background: #0f172a; padding: 20px; border-radius: 15px;">
-                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">10:00</div>
-                                <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
-                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u2c3').classList.toggle('hidden')">👁️ Mostrar Respuestas</button>
-                            </div>
-
-                            <div id="resp-indep-u2c3" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
-                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
-                                <p style="font-size: 1.4rem;">
-                                    <b>A)</b> $\\frac{4}{49}$ &nbsp;|&nbsp; <b>B)</b> $-\\frac{27}{64}$ &nbsp;|&nbsp; <b>C)</b> $(\\frac{2}{5})^3 = \\mathbf{\\frac{8}{125}}$ &nbsp;|&nbsp; <b>D)</b> $(-8)^2 = \\mathbf{64}$
-                                </p>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "5. Cierre: Análisis de Error",
-                        contenido: `
-                            <div class="card" style="border-left-color: #f59e0b;">
-                                <h2 style="color: #f59e0b;">Identificación de Errores Comunes</h2>
-                                <p>Observe con atención el siguiente desarrollo realizado por un estudiante al intentar resolver una potencia de exponente negativo:</p>
-                                
-                                <div class="step" style="font-size: 1.5rem; text-align: center; font-style: italic; background: #fff; color: #000; padding: 15px; border-radius: 8px;">
-                                    $(\\frac{2}{5})^{-2} = (-\\frac{5}{2})^2 = \\frac{25}{4}$
-                                </div>
-                                
-                                <div class="step" style="background: rgba(245, 158, 11, 0.1); margin-top: 20px;">
-                                    <b>Pregunta de Análisis:</b><br>
-                                    Aunque el resultado numérico es correcto, hay un error conceptual grave en el primer paso del desarrollo. Escriba en su cuaderno cuál fue el error que cometió el estudiante con los signos y explique por qué ocurrió.
-                                </div>
-                            </div>
-                        `
-                    }
-                ]
-            }
-
-
-
+           
 
         ]
     },
 ]
-
-
-
-
-
