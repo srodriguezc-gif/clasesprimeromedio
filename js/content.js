@@ -1204,59 +1204,137 @@ const bancoDeUnidades = [
                 ]
             }
 ,
+            {
+                id: "u2_clase6",
+                nombre: "Clase 6: Taller Integral de Modelos Exponenciales",
+                diapositivas: [
                     {
-                        titulo: "6. Taller de Ejercitación: Progresión de Dificultad",
+                        titulo: "1. Síntesis Teórica",
                         contenido: `
-                            <h2>Práctica Intensiva y Resolución de Problemas</h2>
-                            <p>Desarrolle los siguientes ejercicios en su cuaderno de apuntes. La guía está estructurada en tres niveles de complejidad creciente. Disponga de todo el desarrollo algebraico para su posterior revisión.</p>
+                            <h2>Repaso de Modelos de Comportamiento Exponencial</h2>
+                            <p>Antes de iniciar la ejercitación, formalicemos las estructuras algebraicas que gobernarán la resolución de los problemas de hoy.</p>
                             
-                            <div class="card" style="margin-top: 20px; border-left-color: #94a3b8;">
-                                <h3 style="color: #64748b;">Nivel I: Evaluación Directa de Modelos</h3>
-                                <p>Reemplace el valor temporal $t$ en los siguientes modelos exponenciales y calcule el resultado final.</p>
-                                <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
-                                    <div class="step"><b>1)</b> Evaluar $N(t) = 500 \\cdot 2^t$ para $t=3$</div>
-                                    <div class="step"><b>2)</b> Evaluar $P(t) = 1.000 \\cdot (\\frac{1}{2})^t$ para $t=4$</div>
-                                    <div class="step"><b>3)</b> Evaluar $C(t) = 15 \\cdot 3^t$ para $t=2$</div>
-                                    <div class="step"><b>4)</b> Evaluar $M(t) = 81 \\cdot (\\frac{1}{3})^t$ para $t=3$</div>
+                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="step" style="border-top: 5px solid #3b82f6;">
+                                    <h3 style="color: #3b82f6; text-align: center;">Crecimiento Exponencial</h3>
+                                    <p style="text-align: center;">El factor base es mayor a uno.</p>
+                                    <div style="text-align: center; font-size: 1.2em;">$N(t) = N_0 \\cdot a^t$</div>
+                                    <p style="text-align: center;"><b>Condición:</b> $a > 1$</p>
+                                </div>
+                                <div class="step" style="border-top: 5px solid #ef4444;">
+                                    <h3 style="color: #ef4444; text-align: center;">Decrecimiento Exponencial</h3>
+                                    <p style="text-align: center;">El factor base es una fracción propia.</p>
+                                    <div style="text-align: center; font-size: 1.2em;">$N(t) = N_0 \\cdot a^t$</div>
+                                    <p style="text-align: center;"><b>Condición:</b> $0 < a < 1$</p>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Nivel I: Ejecución Mecánica",
+                        contenido: `
+                            <h2>Evaluación Directa de Funciones</h2>
+                            <p>Desarrolle en su cuaderno. Sustituya la variable temporal $t$ en los siguientes modelos y determine el valor final de la expresión.</p>
+                            
+                            <div class="card">
+                                <div class="info-grid">
+                                    <div class="step"><b>1)</b> Evaluar $C(t) = 200 \\cdot 3^t$ para $t=4$</div>
+                                    <div class="step"><b>2)</b> Evaluar $D(t) = 1.600 \\cdot (\\frac{1}{2})^t$ para $t=5$</div>
+                                    <div class="step"><b>3)</b> Evaluar $P(t) = 5 \\cdot 4^t$ para $t=3$</div>
+                                    <div class="step"><b>4)</b> Evaluar $M(t) = 243 \\cdot (\\frac{1}{3})^t$ para $t=4$</div>
                                 </div>
                             </div>
 
-                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
-                                <h3 style="color: #3b82f6;">Nivel II: Formulación de Modelos</h3>
-                                <p>Traduzca los siguientes enunciados a su respectiva función exponencial $f(t) = N_0 \\cdot a^t$. No es necesario resolverlos, solo establezca la ecuación.</p>
-                                <div class="info-grid" style="grid-template-columns: 1fr;">
-                                    <div class="step"><b>5)</b> Un capital inicial de $\\$50.000$ se cuadruplica (se multiplica por $4$) cada década $t$.</div>
-                                    <div class="step"><b>6)</b> Un automóvil valorado en $\\$12.000.000$ pierde valor, reduciéndose a la tercera parte (factor $\\frac{1}{3}$) cada cinco años (donde $t$ es un ciclo de cinco años).</div>
-                                </div>
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-n1-u2c6').classList.toggle('hidden')">Verificar Nivel I</button>
                             </div>
-
-                            <div class="card" style="margin-top: 20px; border-left-color: #f59e0b;">
-                                <h3 style="color: #f59e0b;">Nivel III: Resolución de Problemas Complejos</h3>
-                                <div class="step" style="background: rgba(245, 158, 11, 0.05); margin-bottom: 10px;">
-                                    <b>Problema A (Epidemiología):</b> Un nuevo virus informático infecta la red de un colegio. El día cero hay $5$ computadoras infectadas. Los ingenieros detectan que la cantidad de equipos infectados se quintuplica ($\\times 5$) cada día. 
-                                    <br><br><i>a) Escriba el modelo exponencial.<br>b) ¿Cuántas computadoras estarán infectadas el día 4? <br>c) Si el colegio tiene un total de $3.000$ computadoras, ¿colapsará la red completa en el día 5? Demuéstrelo matemáticamente.</i>
-                                </div>
-                                <div class="step" style="background: rgba(245, 158, 11, 0.05);">
-                                    <b>Problema B (Decaimiento Radiactivo):</b> En un laboratorio de física se estudia un isótopo que tiene una masa inicial de $256$ gramos. Debido a su inestabilidad, la masa se reduce a la cuarta parte (factor $\\frac{1}{4}$) cada ciclo térmico.
-                                    <br><br><i>a) Establezca la función de decaimiento para la masa $M(c)$ tras $c$ ciclos.<br>b) Determine la masa restante exactamente al finalizar el ciclo 4.</i>
-                                </div>
-                            </div>
-
-                            <div style="text-align: center; margin-top: 30px;">
-                                <button class="btn" onclick="document.getElementById('resp-taller-u2').classList.toggle('hidden')" style="border-color: #10b981; color: #10b981;">Desplegar Solucionario Oficial</button>
-                            </div>
-
-                            <div id="resp-taller-u2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
-                                <h3 style="color: #10b981; margin-top: 0;">Clave de Respuestas:</h3>
-                                <ul style="line-height: 1.8; font-size: 1.1rem;">
-                                    <li><b>Nivel I:</b> 1) $500 \\cdot 8 = \\mathbf{4.000}$ | 2) $1.000 \\cdot \\frac{1}{16} = \\mathbf{62,5}$ | 3) $15 \\cdot 9 = \\mathbf{135}$ | 4) $81 \\cdot \\frac{1}{27} = \\mathbf{3}$</li>
-                                    <li><b>Nivel II:</b> 5) $C(t) = 50.000 \\cdot 4^t$ | 6) $V(t) = 12.000.000 \\cdot (\\frac{1}{3})^t$</li>
-                                    <li><b>Nivel III - Problema A:</b> a) $I(t) = 5 \\cdot 5^t$ | b) $I(4) = 5 \\cdot 625 = \\mathbf{3.125}$ equipos | c) Sí, colapsará en el día 4 (ya supera los 3.000), por ende, para el día 5 ($15.625$ según el modelo) la red ya estará completamente comprometida.</li>
-                                    <li><b>Nivel III - Problema B:</b> a) $M(c) = 256 \\cdot (\\frac{1}{4})^c$ | b) $M(4) = 256 \\cdot \\frac{1}{256} = \\mathbf{1}$ gramo restante.</li>
+                            <div id="resp-n1-u2c6" class="hidden" style="margin-top: 20px; padding: 15px; background: #0f172a; border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <ul style="line-height: 1.8; font-size: 1.1rem; color: #fff;">
+                                    <li><b>1)</b> $200 \\cdot 81 = \\mathbf{16.200}$</li>
+                                    <li><b>2)</b> $1.600 \\cdot \\frac{1}{32} = \\mathbf{50}$</li>
+                                    <li><b>3)</b> $5 \\cdot 64 = \\mathbf{320}$</li>
+                                    <li><b>4)</b> $243 \\cdot \\frac{1}{81} = \\mathbf{3}$</li>
                                 </ul>
                             </div>
                         `
+                    },
+                    {
+                        titulo: "3. Nivel II: Formulación de Modelos",
+                        contenido: `
+                            <h2>Traducción del Lenguaje Natural al Algebraico</h2>
+                            <p>Lea cuidadosamente cada situación. Determine la población inicial ($N_0$), el factor de cambio ($a$) y establezca la ecuación exponencial correspondiente. No es necesario realizar cálculos de evaluación.</p>
+                            
+                            <div class="card" style="border-left-color: #f59e0b;">
+                                <div class="step" style="margin-bottom: 15px;">
+                                    <b>Situación A:</b> Una reserva ecológica introduce $120$ especies de una planta. Su propagación es tan rápida que la cantidad total se triplica (se multiplica por $3$) cada mes $t$.
+                                </div>
+                                <div class="step">
+                                    <b>Situación B:</b> Un estanque contiene $4.000$ litros de agua. Debido a una filtración, el estanque retiene solo la cuarta parte (se multiplica por $\\frac{1}{4}$) de su volumen cada día $t$.
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-n2-u2c6').classList.toggle('hidden')">Verificar Nivel II</button>
+                            </div>
+                            <div id="resp-n2-u2c6" class="hidden" style="margin-top: 20px; padding: 15px; background: #0f172a; border-left: 5px solid #f59e0b; border-radius: 8px;">
+                                <ul style="line-height: 1.8; font-size: 1.1rem; color: #fff;">
+                                    <li><b>Modelo A:</b> $P(t) = 120 \\cdot 3^t$</li>
+                                    <li><b>Modelo B:</b> $V(t) = 4.000 \\cdot (\\frac{1}{4})^t$</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Nivel III: Resolución de Problemas",
+                        contenido: `
+                            <h2>Aplicación en Contextos Reales</h2>
+                            <p>Desarrolle los siguientes problemas de manera íntegra: formule el modelo matemático, evalúelo y responda a la pregunta planteada. Dispone de 15 minutos de trabajo riguroso.</p>
+                            
+                            <div class="card" style="border-left-color: #10b981;">
+                                <div class="step" style="margin-bottom: 15px;">
+                                    <b>Problema 1 (Epidemiología):</b> Un brote viral en un software de red inicia afectando a $8$ terminales computacionales. Si el código malicioso cuadruplica ($\\times 4$) la cantidad de computadores infectados cada hora:
+                                    <br>a) Determine el modelo exponencial.
+                                    <br>b) Calcule cuántos terminales estarán infectados transcurridas $4$ horas.
+                                </div>
+                                <div class="step">
+                                    <b>Problema 2 (Física):</b> Un bloque de material radiactivo posee una masa inicial de $1.024$ miligramos. Su inestabilidad provoca que su masa se reduzca a la mitad ($\\times \\frac{1}{2}$) cada ciclo de enfriamiento.
+                                    <br>a) Determine el modelo exponencial de decaimiento.
+                                    <br>b) Calcule la masa residual tras $5$ ciclos de enfriamiento.
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: #0f172a; padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">15:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(900)" style="margin-top: 15px;">⏳ Iniciar Tiempo (15 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-n3-u2c6').classList.toggle('hidden')">👁️ Mostrar Solucionario</button>
+                            </div>
+
+                            <div id="resp-n3-u2c6" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Solucionario Oficial:</h3>
+                                <ul style="line-height: 1.8; font-size: 1.1rem;">
+                                    <li><b>Problema 1:</b><br> a) $I(t) = 8 \\cdot 4^t$<br> b) $I(4) = 8 \\cdot 4^4 = 8 \\cdot 256 = \\mathbf{2.048}$ terminales infectados.</li>
+                                    <li style="margin-top: 10px;"><b>Problema 2:</b><br> a) $M(c) = 1.024 \\cdot (\\frac{1}{2})^c$<br> b) $M(5) = 1.024 \\cdot \\frac{1}{32} = \\mathbf{32}$ miligramos.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: Evaluación de Hipótesis",
+                        contenido: `
+                            <div class="card" style="border-left-color: #8b5cf6;">
+                                <h2 style="color: #8b5cf6;">Ticket de Salida</h2>
+                                <p>Un analista financiero formula la siguiente hipótesis frente a una junta directiva:</p>
+                                
+                                <div class="step" style="background: rgba(139, 92, 246, 0.1); text-align: center; font-style: italic; font-size: 1.2rem; margin: 15px 0;">
+                                    "Si tenemos un capital de $\\$10.000$ que se duplica cada año, y otro de $\\$40.000$ que aumenta solo en $\\$10.000$ fijos cada año, el segundo capital siempre será mayor porque empezó con una cantidad superior."
+                                </div>
+                                
+                                <p><b>Instrucción:</b><br>Demuestre matemáticamente en su cuaderno si el analista tiene razón o está equivocado, proyectando ambos escenarios hasta el año $4$. Formule una conclusión formal sobre el impacto a largo plazo del crecimiento exponencial frente al crecimiento lineal (sumas constantes).</p>
+                            </div>
+                        `
                     }
+                ]
+            }
 
 
 
