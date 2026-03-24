@@ -674,7 +674,7 @@ const bancoDeUnidades = [
                     }
                 ]
             },
- {
+           {
                 id: "u2_clase2",
                 nombre: "Clase 2: Potencias de base racional y exponente entero",
                 diapositivas: [
@@ -1335,14 +1335,532 @@ const bancoDeUnidades = [
                     }
                 ]
             }
+        ]
+    },
+    {         
+        idUnidad: "unidad3",
+        nombreUnidad: "Unidad 3: Productos Notables y Factorización",
+        clases: [ 
+        {
+                id: "u3_clase1",
+                nombre: "Clase 1: Lenguaje Algebraico y Operaciones Básicas",
+                diapositivas: [
+                    {
+                        titulo: "1. ¿Qué es una Expresión Algebraica?",
+                        contenido: `
+                            <h2>El Alfabeto de las Matemáticas</h2>
+                            <p>El álgebra nos permite generalizar cantidades usando letras. Una expresión algebraica está formada por uno o más <strong>términos</strong> separados por signos de suma ($+$) o resta ($-$).</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">Clasificación según su cantidad de términos</h3>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #bfdbfe;">
+                                        <b style="color: #1e3a8a; font-size: 1.1rem;">1. Monomio (1 término)</b><br>
+                                        No hay sumas ni restas que lo separen. <br>
+                                        <i>Ejemplo:</i> $5x^2$ 
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #bbf7d0;">
+                                        <b style="color: #064e3b; font-size: 1.1rem;">2. Binomio (2 términos)</b><br>
+                                        Dos monomios unidos por un $+$ o un $-$.<br>
+                                        <i>Ejemplo:</i> $3a + 7b$
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #fde68a;">
+                                        <b style="color: #b45309; font-size: 1.1rem;">3. Trinomio (3 términos)</b><br>
+                                        Tres monomios unidos por sumas o restas.<br>
+                                        <i>Ejemplo:</i> $x^2 - 5x + 6$
+                                    </div>
+                                    <div style="background: rgba(139, 92, 246, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #ddd6fe;">
+                                        <b style="color: #4c1d95; font-size: 1.1rem;">4. Polinomio (4 o más términos)</b><br>
+                                        "Poli" significa muchos. Agrupa a todos los que tienen varios términos.<br>
+                                        <i>Ejemplo:</i> $2y^3 + 4y^2 - y + 9$
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Anatomía y Términos Semejantes",
+                        contenido: `
+                            <h2>Diseccionando un Término y Buscando Gemelos</h2>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                                <h3 style="color: #10b981;">Las Partes de un Término Algebraico</h3>
+                                
+                                <div style="display: flex; justify-content: center; align-items: center; margin: 30px 0; font-family: monospace;">
+                                    <div style="text-align: center; margin-right: 10px;">
+                                        <div style="color: #ef4444; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px;">Signo</div>
+                                        <div style="font-size: 3rem; font-weight: bold; color: #ef4444;">-</div>
+                                    </div>
+                                    <div style="text-align: center; margin-right: 10px;">
+                                        <div style="color: #3b82f6; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px;">Coeficiente Numérico</div>
+                                        <div style="font-size: 3rem; font-weight: bold; color: #3b82f6;">4</div>
+                                    </div>
+                                    <div style="text-align: center; position: relative;">
+                                        <div style="color: #10b981; font-size: 0.9rem; font-weight: bold; margin-bottom: 5px;">Factor Literal</div>
+                                        <div style="font-size: 3rem; font-weight: bold; color: #10b981;">x</div>
+                                        <div style="position: absolute; top: 25px; right: -25px; color: #8b5cf6; font-size: 0.9rem; font-weight: bold;">Exponente</div>
+                                        <div style="position: absolute; top: 40px; right: -20px; font-size: 1.5rem; font-weight: bold; color: #8b5cf6;">3</div>
+                                    </div>
+                                </div>
+                                
+                                <h3 style="color: #10b981; margin-top: 30px;">Términos Semejantes</h3>
+                                <p>Dos o más términos son semejantes <strong>solo si tienen exactamente el mismo Factor Literal y el mismo Exponente</strong>. El coeficiente numérico (el número grande) puede ser diferente.</p>
+                                
+                                <ul style="line-height: 1.8;">
+                                    <li>✅ $5x^2$ y $-3x^2$ <b>SÍ</b> son semejantes (comparten $x^2$).</li>
+                                    <li>❌ $4a$ y $4b$ <b>NO</b> son semejantes (letras distintas).</li>
+                                    <li>❌ $2m^2$ y $2m^3$ <b>NO</b> son semejantes (mismos números y letras, pero exponentes distintos).</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Suma y Resta",
+                        contenido: `
+                            <h2>La Regla de Oro: Solo Semejantes</h2>
+                            <p>En la suma y resta de álgebra: <strong>Solo podemos operar términos que sean semejantes</strong>. Si no son semejantes, se dejan exactamente como están.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="step" style="font-size: 1.2rem; text-align: center;"><b>1)</b> $3x + 5x$</div>
+                                <div class="step" style="font-size: 1.2rem; text-align: center;"><b>2)</b> $7a - 2a + 4b$</div>
+                                <div class="step" style="font-size: 1.2rem; text-align: center;"><b>3)</b> $5m^2 + 3m - 2m^2$</div>
+                                <div class="step" style="font-size: 1.2rem; text-align: center;"><b>4)</b> $4xy - xy + 2x$</div>
+                            </div>
 
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u3c1-sr').classList.toggle('hidden')">Desplegar Reducción Formal</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u3c1-sr" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Matemático:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>1)</b> Como ambos tienen $x$, sumamos los números: $(3 + 5)x = \\mathbf{8x}$</li>
+                                    <li><b>2)</b> Agrupamos solo las 'a': $(7 - 2)a + 4b = \\mathbf{5a + 4b}$ <i>(El $4b$ no se mezcla)</i></li>
+                                    <li><b>3)</b> Agrupamos solo los $m^2$: $(5 - 2)m^2 + 3m = \\mathbf{3m^2 + 3m}$</li>
+                                    <li><b>4)</b> Recuerda el '1' invisible: $(4 - 1)xy + 2x = \\mathbf{3xy + 2x}$</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente (Suma y Resta)",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Reduzca las siguientes expresiones algebraicas identificando primero cuáles términos son semejantes. Dispone de 8 minutos.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>A)</b> $8p + 3p - 5p$</div>
+                                <div class="step"><b>B)</b> $6x + 2y - 4x + 5y$</div>
+                                <div class="step"><b>C)</b> $3w^3 + 7w - w^3 + 2$</div>
+                                <div class="step"><b>D)</b> $10ab - 4ab + 3a - a$</div>
+                            </div>
 
+                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
+                                <div id="timer-display1" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">08:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(480, 'timer-display1')" style="margin-top: 15px;">⏳ Iniciar Tiempo (8 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c1-sr').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
 
+                            <div id="resp-indep-u3c1-sr" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>A)</b> $\\mathbf{6p}$</li>
+                                    <li><b>B)</b> $\\mathbf{2x + 7y}$</li>
+                                    <li><b>C)</b> $\\mathbf{2w^3 + 7w + 2}$</li>
+                                    <li><b>D)</b> $\\mathbf{6ab + 2a}$</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Multiplicación y División de Monomios",
+                        contenido: `
+                            <h2>Aquí se rompe la regla de oro</h2>
+                            <p>¡Atención! Para multiplicar o dividir <strong>NO es necesario que los términos sean semejantes</strong>. Podemos multiplicar cualquier término con cualquier otro siguiendo dos pasos simples:</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #f59e0b;">
+                                <ol style="line-height: 2;">
+                                    <li><b>Los Números:</b> Se multiplican o dividen de forma normal.</li>
+                                    <li><b>Las Letras (Potencias):</b> Si las letras son iguales, aplicamos las propiedades de las potencias. Al multiplicar, <b>sumamos</b> los exponentes. Al dividir, <b>restamos</b> los exponentes.</li>
+                                </ol>
+                                
+                                <div class="info-grid" style="grid-template-columns: 1fr 1fr; margin-top: 20px;">
+                                    <div class="step" style="background: rgba(59, 130, 246, 0.05);">
+                                        <b style="color: #3b82f6;">Ejemplo Multiplicación:</b><br>
+                                        $2x^3 \\cdot 4x^2$<br>
+                                        Números: $2 \\cdot 4 = 8$<br>
+                                        Letras: $x^{(3+2)} = x^5$<br>
+                                        <b>Resultado: $8x^5$</b>
+                                    </div>
+                                    <div class="step" style="background: rgba(16, 185, 129, 0.05);">
+                                        <b style="color: #10b981;">Ejemplo División:</b><br>
+                                        $15m^6 : 3m^2$<br>
+                                        Números: $15 : 3 = 5$<br>
+                                        Letras: $m^{(6-2)} = m^4$<br>
+                                        <b>Resultado: $5m^4$</b>
+                                    </div>
+                                </div>
+                                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #64748b;">*Recuerda: Una letra sola como $x$ tiene un exponente invisible de 1 ($x^1$).</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "6. Práctica: Multiplicación y División",
+                        contenido: `
+                            <h2>Cambiando el Chip Mental</h2>
+                            <p>Resuelva las siguientes operaciones en su cuaderno. ¡Cuidado con no confundir las reglas de la suma con las de la multiplicación! Dispone de 8 minutos.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>A)</b> $3x \\cdot 5x$</div>
+                                <div class="step"><b>B)</b> $4y^2 \\cdot (-2y^3)$</div>
+                                <div class="step"><b>C)</b> $20a^5 : 4a^2$</div>
+                                <div class="step"><b>D)</b> $-12p^4 : (-3p)$</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
+                                <div id="timer-display2" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">08:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(480, 'timer-display2')" style="margin-top: 15px;">⏳ Iniciar Tiempo (8 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c1-md').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
+
+                            <div id="resp-indep-u3c1-md" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>A)</b> $(3 \\cdot 5)x^{(1+1)} = \\mathbf{15x^2}$</li>
+                                    <li><b>B)</b> $(4 \\cdot -2)y^{(2+3)} = \\mathbf{-8y^5}$</li>
+                                    <li><b>C)</b> $(20 : 4)a^{(5-2)} = \\mathbf{5a^3}$</li>
+                                    <li><b>D)</b> $(-12 : -3)p^{(4-1)} = \\mathbf{4p^3}$ <i>(Menos dividido en menos es más)</i></li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "7. Cierre: El Error de las Frutas",
+                        contenido: `
+                            <div class="card" style="border-left-color: #ef4444;">
+                                <h2 style="color: #ef4444;">El Síndrome de la Licuadora (Ticket de Salida)</h2>
+                                <p>El error más clásico y fatal al iniciar el estudio del álgebra es confundir una suma con una multiplicación.</p>
+                                
+                                <div class="step" style="text-align: center; font-size: 1.5rem; color: #ef4444; font-weight: bold; margin: 15px 0;">
+                                    $2x + 3x = 5x^2 \\quad \\text{(¡FALSO!)}$<br>
+                                    $2x + 3y = 5xy \\quad \\text{(¡FALSO!)}$
+                                </div>
+                                
+                                <div class="step" style="background: rgba(239, 68, 68, 0.05); margin-top: 20px;">
+                                    <b>Instrucción de Metacognición:</b><br>
+                                    Asigne a la letra $x$ el significado de "Manzanas" y a la letra $y$ el significado de "Naranjas". <br><br>
+                                    Redacte en su cuaderno una breve explicación detallando por qué es imposible que sumar $2$ manzanas y $3$ naranjas dé como resultado $5$ "manzanas-naranjas" ($5xy$). Utilice este mismo argumento para explicar por qué si sumamos 2 manzanas y 3 manzanas ($2x + 3x$), obtenemos 5 manzanas ($5x$) y no "manzanas al cuadrado" ($5x^2$).
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+
+            {
+                id: "u3_clase2",
+                nombre: "Clase 2: Cuadrado y Cubo de un Binomio",
+                diapositivas: [
+                    {
+                        titulo: "1. El Cuadrado del Binomio y el TCP",
+                        contenido: `
+                            <h2>De la Geometría al Trinomio Cuadrado Perfecto</h2>
+                            <p>Los productos notables son multiplicaciones algebraicas que cumplen reglas fijas. El más importante es el <strong>Cuadrado de un Binomio</strong>. Al resolverlo, el resultado que obtenemos recibe un nombre especial en álgebra: <strong>Trinomio Cuadrado Perfecto (TCP)</strong>.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">El Modelo de Áreas (Euclides)</h3>
+                                <p>Hace más de 2000 años, Euclides demostró esto con geometría. Elevar $(a+b)^2$ es calcular el área de un cuadrado de lado $(a+b)$. Esta área total se compone de: el área del primer cuadrado ($a^2$), el área de dos rectángulos idénticos ($2ab$) y el área del segundo cuadrado ($b^2$).</p>
+                                
+                                <div style="text-align: center; margin: 20px 0;">
+                                    <svg viewBox="0 0 220 220" style="width: 100%; max-width: 250px; border-radius: 8px;">
+                                        <rect x="30" y="30" width="100" height="100" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
+                                        <text x="80" y="85" font-size="20" text-anchor="middle" font-weight="bold" fill="#3b82f6">a²</text>
+                                        
+                                        <rect x="130" y="30" width="60" height="100" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
+                                        <text x="160" y="85" font-size="18" text-anchor="middle" font-weight="bold" fill="#10b981">ab</text>
+                                        
+                                        <rect x="30" y="130" width="100" height="60" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
+                                        <text x="80" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#10b981">ab</text>
+                                        
+                                        <rect x="130" y="130" width="60" height="60" fill="rgba(234, 179, 8, 0.2)" stroke="#eab308" stroke-width="2"/>
+                                        <text x="160" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#eab308">b²</text>
+                                    </svg>
+                                </div>
+                                
+                                <div class="step" style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                                    <b>Suma:</b> $$(a + b)^2 = a^2 + 2ab + b^2$$
+                                    <b>Resta:</b> $$(a - b)^2 = a^2 - 2ab + b^2$$
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. El Cubo del Binomio y Triángulo de Pascal",
+                        contenido: `
+                            <h2>Expansión Volumétrica y Coeficientes</h2>
+                            <p>El cubo de un binomio representa el <strong>volumen de un cubo</strong> cuya arista mide $(a+b)$. Al expandirlo, obtenemos 8 bloques geométricos que se agrupan en 4 términos algebraicos.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
+                                <h3 style="color: #8b5cf6;">El Secreto de los Coeficientes (Triángulo de Pascal)</h3>
+                                <p>¿Te has preguntado de dónde salen los números que multiplican a las letras? Provienen del Triángulo de Pascal, un patrón numérico infinito:</p>
+                                <ul style="line-height: 1.8;">
+                                    <li>Para el <b>Cuadrado</b> (exponente 2), usamos la fila 2: <b>1, 2, 1</b> $\\rightarrow (1a^2 + 2ab + 1b^2)$</li>
+                                    <li>Para el <b>Cubo</b> (exponente 3), usamos la fila 3: <b>1, 3, 3, 1</b> $\\rightarrow (1a^3 + 3a^2b + 3ab^2 + 1b^3)$</li>
+                                </ul>
+                                
+                                <div class="step" style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                                    <b>Suma:</b> $$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$
+                                    <b>Resta:</b> $$(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$$
+                                </div>
+                                <p><em>Nota importante sobre la resta:</em> Los signos se alternan invariablemente: $(+, -, +, -)$.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Resolución Conjunta",
+                        contenido: `
+                            <h2>Desarrollo Analítico en Pizarra</h2>
+                            <p>Aplicaremos las fórmulas paso a paso. Para facilitar el aprendizaje del patrón, trabajaremos con expresiones sencillas. Identifique siempre quién es el "primer término" ($a$) y quién es el "segundo término" ($b$) antes de operar.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>1)</b> $(x + 6)^2$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>2)</b> $(2a - 3)^2$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>3)</b> $(y + 2)^3$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>4)</b> $(m - 4)^3$
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u3c1').classList.toggle('hidden')">Desplegar Desarrollo Formal</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u3c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Matemático Paso a Paso:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>1) TCP (Suma):</b> $(x)^2 + 2(x)(6) + (6)^2 = \\mathbf{x^2 + 12x + 36}$</li>
+                                    <li><b>2) TCP (Resta):</b> $(2a)^2 - 2(2a)(3) + (3)^2 = \\mathbf{4a^2 - 12a + 9}$</li>
+                                    <li><b>3) Cubo (Suma):</b> $(y)^3 + 3(y)^2(2) + 3(y)(2)^2 + (2)^3$<br>
+                                        $= y^3 + 3(y^2)(2) + 3(y)(4) + 8 = \\mathbf{y^3 + 6y^2 + 12y + 8}$</li>
+                                    <li><b>4) Cubo (Resta):</b> $(m)^3 - 3(m)^2(4) + 3(m)(4)^2 - (4)^3$<br>
+                                        $= m^3 - 3(m^2)(4) + 3(m)(16) - 64 = \\mathbf{m^3 - 12m^2 + 48m - 64}$
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Desarrolle las siguientes expresiones en su cuaderno. Concéntrese en aplicar correctamente el patrón y en respetar la regla de los signos (especialmente en las restas). Tiempo asignado: 12 minutos.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>A)</b> $(p + 5)^2$</div>
+                                <div class="step"><b>B)</b> $(3x - 1)^2$</div>
+                                <div class="step"><b>C)</b> $(w + 3)^3$</div>
+                                <div class="step"><b>D)</b> $(n - 2)^3$</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">12:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(720)" style="margin-top: 15px;">⏳ Iniciar Tiempo (12 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c1').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
+
+                            <div id="resp-indep-u3c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>A)</b> $p^2 + 10p + 25$</li>
+                                    <li><b>B)</b> $9x^2 - 6x + 1$</li>
+                                    <li><b>C)</b> $w^3 + 9w^2 + 27w + 27$</li>
+                                    <li><b>D)</b> $n^3 - 6n^2 + 12n - 8$</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: Análisis del Error Fundamental",
+                        contenido: `
+                            <div class="card" style="border-left-color: #ef4444;">
+                                <h2 style="color: #ef4444;">Refutación Empírica (Ticket de Salida)</h2>
+                                <p>La "distribución ilegal" del exponente es el error más castigado en el álgebra superior. Muchos estudiantes asumen erróneamente que:</p>
+                                
+                                <div class="step" style="text-align: center; font-size: 1.5rem; color: #ef4444; font-weight: bold; margin: 15px 0;">
+                                    $(a + b)^2 = a^2 + b^2 \\quad \\text{(¡TOTALMENTE FALSO!)}$
+                                </div>
+                                
+                                <div class="step" style="background: rgba(239, 68, 68, 0.05); margin-top: 20px;">
+                                    <b>Demostración de la Falacia:</b><br>
+                                    Asuma que usted es un arquitecto y le piden calcular el área de un terreno cuadrado compuesto por dos parcelas, donde $a = 10$ metros y $b = 5$ metros. <br><br>
+                                    1) Calcule el área real del terreno usando la fórmula correcta: $(10 + 5)^2$.<br>
+                                    2) Calcule el área usando la fórmula errónea del estudiante: $10^2 + 5^2$.<br>
+                                    3) <b>Pregunta:</b> ¿Cuántos metros cuadrados de terreno "desaparecieron" por culpa del error matemático? ¿A qué piezas del dibujo (Slide 1) corresponden esos metros perdidos? Redacte su respuesta.
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: "u3_clase3",
+                nombre: "Clase 3: Suma por su Diferencia",
+                diapositivas: [
+                    {
+                        titulo: "1. Concepto y Fórmula Estructural",
+                        contenido: `
+                            <h2>La Suma por su Diferencia</h2>
+                            <p>Este es uno de los productos notables más rápidos de resolver. Ocurre cuando multiplicamos dos binomios que son <strong>exactamente iguales</strong>, con la única diferencia de que uno se está sumando y el otro se está restando.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">Diferencia de Cuadrados</h3>
+                                <p>Al multiplicar $(a + b)(a - b)$ término a término, los términos centrales ($+ab$ y $-ab$) se anulan o cancelan entre sí ("se hacen cero"). Por esto, el resultado siempre será el cuadrado del primer término <b>menos</b> el cuadrado del segundo término.</p>
+                                
+                                <div class="step" style="text-align: center; font-size: 1.5em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                                    $$(a + b)(a - b) = a^2 - b^2$$
+                                </div>
+                                <p style="text-align: center; font-size: 0.95rem; color: #64748b;"><em>Nota: El orden de los paréntesis no altera el resultado: $(a - b)(a + b)$ genera exactamente la misma respuesta.</em></p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "2. Demostración Geométrica",
+                        contenido: `
+                            <h2>Visualizando la Diferencia de Cuadrados</h2>
+                            <p>Geométricamente, la expresión $a^2 - b^2$ representa el área de un cuadrado grande ($a^2$) al que le hemos "recortado" un cuadrado más pequeño ($b^2$) en una esquina.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
+                                    <svg viewBox="0 0 200 200" style="width: 100%; max-width: 180px;">
+                                        <rect x="10" y="10" width="160" height="160" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
+                                        <text x="80" y="90" font-size="24" text-anchor="middle" font-weight="bold" fill="#064e3b">a²</text>
+                                        
+                                        <rect x="110" y="10" width="60" height="60" fill="#fff" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
+                                        <text x="140" y="45" font-size="18" text-anchor="middle" font-weight="bold" fill="#ef4444">-b²</text>
+                                        
+                                        <text x="90" y="190" font-size="16" text-anchor="middle" font-style="italic">a</text>
+                                    </svg>
+                                    
+                                    <div style="font-size: 2rem; font-weight: bold; color: #64748b;">=</div>
+                                    
+                                    <svg viewBox="0 0 260 140" style="width: 100%; max-width: 220px;">
+                                        <rect x="10" y="20" width="220" height="100" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
+                                        <line x1="160" y1="20" x2="160" y2="120" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4"/>
+                                        
+                                        <text x="120" y="75" font-size="16" text-anchor="middle" font-weight="bold" fill="#1e3a8a">Área = (a + b)(a - b)</text>
+                                        
+                                        <text x="85" y="15" font-size="14" text-anchor="middle" font-style="italic">a</text>
+                                        <text x="190" y="15" font-size="14" text-anchor="middle" font-style="italic">b</text>
+                                        <text x="245" y="75" font-size="14" text-anchor="middle" font-style="italic">a - b</text>
+                                    </svg>
+                                </div>
+                                
+                                <p style="text-align: justify;">Si tomamos la pieza sobrante en forma de "L" (izquierda) y reacomodamos uno de sus rectángulos, formaremos un nuevo rectángulo perfecto (derecha) cuya base mide $(a+b)$ y su altura mide $(a-b)$. ¡Por eso ambas expresiones son equivalentes!</p>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "3. Práctica Guiada: Resolución Conjunta",
+                        contenido: `
+                            <h2>Aplicación del Patrón en Pizarra</h2>
+                            <p>Recuerde: Para aplicar esta regla, los paréntesis deben ser idénticos en sus términos, variando únicamente el signo central.</p>
+                            
+                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>1)</b> $(x + 4)(x - 4)$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>2)</b> $(y - 7)(y + 7)$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>3)</b> $(2m + 5)(2m - 5)$
+                                </div>
+                                <div class="step" style="font-size: 1.3rem; text-align: center;">
+                                    <b>4)</b> $(3p - 1)(3p + 1)$
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn" onclick="document.getElementById('resp-guiadas-u3c2').classList.toggle('hidden')">Desplegar Desarrollo Formal</button>
+                            </div>
+                            
+                            <div id="resp-guiadas-u3c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
+                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Matemático Paso a Paso:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>1)</b> $(x)^2 - (4)^2 = \\mathbf{x^2 - 16}$</li>
+                                    <li><b>2)</b> $(y)^2 - (7)^2 = \\mathbf{y^2 - 49}$ <i>(El orden de los signos no afecta)</i></li>
+                                    <li><b>3)</b> $(2m)^2 - (5)^2 = \\mathbf{4m^2 - 25}$ <i>(Recuerde elevar también el número 2)</i></li>
+                                    <li><b>4)</b> $(3p)^2 - (1)^2 = \\mathbf{9p^2 - 1}$
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "4. Práctica Independiente",
+                        contenido: `
+                            <h2>Ejercitación Individual</h2>
+                            <p>Resuelva las siguientes multiplicaciones algebraicas en su cuaderno aplicando la fórmula de la diferencia de cuadrados. Concéntrese en elevar correctamente cada coeficiente numérico. Dispone de 8 minutos.</p>
+                            
+                            <div class="info-grid">
+                                <div class="step"><b>A)</b> $(w + 9)(w - 9)$</div>
+                                <div class="step"><b>B)</b> $(n - 10)(n + 10)$</div>
+                                <div class="step"><b>C)</b> $(4k + 3)(4k - 3)$</div>
+                                <div class="step"><b>D)</b> $(5x - 2)(5x + 2)$</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
+                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">08:00</div>
+                                <button class="btn btn-primary" onclick="iniciarCronometro(480)" style="margin-top: 15px;">⏳ Iniciar Tiempo (8 min)</button>
+                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c2').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                            </div>
+
+                            <div id="resp-indep-u3c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
+                                <ul style="line-height: 2; font-size: 1.1rem;">
+                                    <li><b>A)</b> $w^2 - 81$</li>
+                                    <li><b>B)</b> $n^2 - 100$</li>
+                                    <li><b>C)</b> $16k^2 - 9$</li>
+                                    <li><b>D)</b> $25x^2 - 4$</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        titulo: "5. Cierre: El Truco Mental",
+                        contenido: `
+                            <div class="card" style="border-left-color: #8b5cf6;">
+                                <h2 style="color: #8b5cf6;">El Truco del Calculista (Ticket de Salida)</h2>
+                                <p>El álgebra no solo sirve para calcular letras; nos permite crear "atajos" para cálculos numéricos mentales muy complejos.</p>
+                                
+                                <div class="step" style="background: rgba(139, 92, 246, 0.05); margin-top: 20px;">
+                                    <b>Ejemplo:</b> ¿Cómo calcular mentalmente $21 \\times 19$ de forma rápida?<br>
+                                    Podemos reescribir esos números como una Suma por su Diferencia:<br>
+                                    $21 \\times 19 = (20 + 1)(20 - 1)$<br>
+                                    Aplicando la fórmula: $20^2 - 1^2$<br>
+                                    Resolviendo: $400 - 1 = \\mathbf{399}$
+                                </div>
+                                
+                                <div class="step" style="margin-top: 20px; border-left: 4px solid #f59e0b;">
+                                    <b>Su Turno (Desafío):</b><br>
+                                    Utilizando esta misma estrategia de "Suma por su Diferencia", calcule mentalmente (y demuestre los pasos en su cuaderno) el resultado de la siguiente multiplicación:<br><br>
+                                    <div style="text-align: center; font-size: 1.8rem; font-weight: bold; margin: 10px 0;">
+                                        $42 \\times 38$
+                                    </div>
+                                    <i>Pista: Busque el número "redondo" que se encuentra exactamente al medio de ambos.</i>
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
         ]
     },
 ]
-
-
-
-
-
