@@ -1203,7 +1203,60 @@ const bancoDeUnidades = [
                     }
                 ]
             }
+,
+                    {
+                        titulo: "6. Taller de Ejercitación: Progresión de Dificultad",
+                        contenido: `
+                            <h2>Práctica Intensiva y Resolución de Problemas</h2>
+                            <p>Desarrolle los siguientes ejercicios en su cuaderno de apuntes. La guía está estructurada en tres niveles de complejidad creciente. Disponga de todo el desarrollo algebraico para su posterior revisión.</p>
+                            
+                            <div class="card" style="margin-top: 20px; border-left-color: #94a3b8;">
+                                <h3 style="color: #64748b;">Nivel I: Evaluación Directa de Modelos</h3>
+                                <p>Reemplace el valor temporal $t$ en los siguientes modelos exponenciales y calcule el resultado final.</p>
+                                <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                                    <div class="step"><b>1)</b> Evaluar $N(t) = 500 \\cdot 2^t$ para $t=3$</div>
+                                    <div class="step"><b>2)</b> Evaluar $P(t) = 1.000 \\cdot (\\frac{1}{2})^t$ para $t=4$</div>
+                                    <div class="step"><b>3)</b> Evaluar $C(t) = 15 \\cdot 3^t$ para $t=2$</div>
+                                    <div class="step"><b>4)</b> Evaluar $M(t) = 81 \\cdot (\\frac{1}{3})^t$ para $t=3$</div>
+                                </div>
+                            </div>
 
+                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                                <h3 style="color: #3b82f6;">Nivel II: Formulación de Modelos</h3>
+                                <p>Traduzca los siguientes enunciados a su respectiva función exponencial $f(t) = N_0 \\cdot a^t$. No es necesario resolverlos, solo establezca la ecuación.</p>
+                                <div class="info-grid" style="grid-template-columns: 1fr;">
+                                    <div class="step"><b>5)</b> Un capital inicial de $\\$50.000$ se cuadruplica (se multiplica por $4$) cada década $t$.</div>
+                                    <div class="step"><b>6)</b> Un automóvil valorado en $\\$12.000.000$ pierde valor, reduciéndose a la tercera parte (factor $\\frac{1}{3}$) cada cinco años (donde $t$ es un ciclo de cinco años).</div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-top: 20px; border-left-color: #f59e0b;">
+                                <h3 style="color: #f59e0b;">Nivel III: Resolución de Problemas Complejos</h3>
+                                <div class="step" style="background: rgba(245, 158, 11, 0.05); margin-bottom: 10px;">
+                                    <b>Problema A (Epidemiología):</b> Un nuevo virus informático infecta la red de un colegio. El día cero hay $5$ computadoras infectadas. Los ingenieros detectan que la cantidad de equipos infectados se quintuplica ($\\times 5$) cada día. 
+                                    <br><br><i>a) Escriba el modelo exponencial.<br>b) ¿Cuántas computadoras estarán infectadas el día 4? <br>c) Si el colegio tiene un total de $3.000$ computadoras, ¿colapsará la red completa en el día 5? Demuéstrelo matemáticamente.</i>
+                                </div>
+                                <div class="step" style="background: rgba(245, 158, 11, 0.05);">
+                                    <b>Problema B (Decaimiento Radiactivo):</b> En un laboratorio de física se estudia un isótopo que tiene una masa inicial de $256$ gramos. Debido a su inestabilidad, la masa se reduce a la cuarta parte (factor $\\frac{1}{4}$) cada ciclo térmico.
+                                    <br><br><i>a) Establezca la función de decaimiento para la masa $M(c)$ tras $c$ ciclos.<br>b) Determine la masa restante exactamente al finalizar el ciclo 4.</i>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px;">
+                                <button class="btn" onclick="document.getElementById('resp-taller-u2').classList.toggle('hidden')" style="border-color: #10b981; color: #10b981;">Desplegar Solucionario Oficial</button>
+                            </div>
+
+                            <div id="resp-taller-u2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
+                                <h3 style="color: #10b981; margin-top: 0;">Clave de Respuestas:</h3>
+                                <ul style="line-height: 1.8; font-size: 1.1rem;">
+                                    <li><b>Nivel I:</b> 1) $500 \\cdot 8 = \\mathbf{4.000}$ | 2) $1.000 \\cdot \\frac{1}{16} = \\mathbf{62,5}$ | 3) $15 \\cdot 9 = \\mathbf{135}$ | 4) $81 \\cdot \\frac{1}{27} = \\mathbf{3}$</li>
+                                    <li><b>Nivel II:</b> 5) $C(t) = 50.000 \\cdot 4^t$ | 6) $V(t) = 12.000.000 \\cdot (\\frac{1}{3})^t$</li>
+                                    <li><b>Nivel III - Problema A:</b> a) $I(t) = 5 \\cdot 5^t$ | b) $I(4) = 5 \\cdot 625 = \\mathbf{3.125}$ equipos | c) Sí, colapsará en el día 4 (ya supera los 3.000), por ende, para el día 5 ($15.625$ según el modelo) la red ya estará completamente comprometida.</li>
+                                    <li><b>Nivel III - Problema B:</b> a) $M(c) = 256 \\cdot (\\frac{1}{4})^c$ | b) $M(4) = 256 \\cdot \\frac{1}{256} = \\mathbf{1}$ gramo restante.</li>
+                                </ul>
+                            </div>
+                        `
+                    }
 
 
 
