@@ -2624,7 +2624,7 @@ const bancoDeUnidades = [
             `
         }
     ]
-}
+},
     ]
 }
 ]
