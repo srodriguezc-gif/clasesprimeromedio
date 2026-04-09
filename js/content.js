@@ -1342,8 +1342,8 @@ const bancoDeUnidades = [
         nombreUnidad: "Unidad 3: Productos Notables y Factorización",
         clases: [ 
         {
-                id: "u3_clase1",
-                nombre: "Clase 1: Lenguaje Algebraico y Operaciones Básicas",
+                id: "u3_clase0",
+                nombre: "Clase 0: Lenguaje Algebraico y Operaciones Básicas",
                 diapositivas: [
                     {
                         titulo: "1. ¿Qué es una Expresión Algebraica?",
@@ -1558,309 +1558,1073 @@ const bancoDeUnidades = [
                 ]
             },
 
-            {
-                id: "u3_clase2",
-                nombre: "Clase 2: Cuadrado y Cubo de un Binomio",
-                diapositivas: [
-                    {
-                        titulo: "1. El Cuadrado del Binomio y el TCP",
-                        contenido: `
-                            <h2>De la Geometría al Trinomio Cuadrado Perfecto</h2>
-                            <p>Los productos notables son multiplicaciones algebraicas que cumplen reglas fijas. El más importante es el <strong>Cuadrado de un Binomio</strong>. Al resolverlo, el resultado que obtenemos recibe un nombre especial en álgebra: <strong>Trinomio Cuadrado Perfecto (TCP)</strong>.</p>
-                            
-                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
-                                <h3 style="color: #3b82f6;">El Modelo de Áreas (Euclides)</h3>
-                                <p>Hace más de 2000 años, Euclides demostró esto con geometría. Elevar $(a+b)^2$ es calcular el área de un cuadrado de lado $(a+b)$. Esta área total se compone de: el área del primer cuadrado ($a^2$), el área de dos rectángulos idénticos ($2ab$) y el área del segundo cuadrado ($b^2$).</p>
-                                
-                                <div style="text-align: center; margin: 20px 0;">
-                                    <svg viewBox="0 0 220 220" style="width: 100%; max-width: 250px; border-radius: 8px;">
-                                        <rect x="30" y="30" width="100" height="100" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
-                                        <text x="80" y="85" font-size="20" text-anchor="middle" font-weight="bold" fill="#3b82f6">a²</text>
-                                        
-                                        <rect x="130" y="30" width="60" height="100" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
-                                        <text x="160" y="85" font-size="18" text-anchor="middle" font-weight="bold" fill="#10b981">ab</text>
-                                        
-                                        <rect x="30" y="130" width="100" height="60" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
-                                        <text x="80" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#10b981">ab</text>
-                                        
-                                        <rect x="130" y="130" width="60" height="60" fill="rgba(234, 179, 8, 0.2)" stroke="#eab308" stroke-width="2"/>
-                                        <text x="160" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#eab308">b²</text>
-                                    </svg>
-                                </div>
-                                
-                                <div class="step" style="text-align: center; font-size: 1.2em; margin: 15px 0;">
-                                    <b>Suma:</b> $$(a + b)^2 = a^2 + 2ab + b^2$$
-                                    <b>Resta:</b> $$(a - b)^2 = a^2 - 2ab + b^2$$
-                                </div>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "2. El Cubo del Binomio y Triángulo de Pascal",
-                        contenido: `
-                            <h2>Expansión Volumétrica y Coeficientes</h2>
-                            <p>El cubo de un binomio representa el <strong>volumen de un cubo</strong> cuya arista mide $(a+b)$. Al expandirlo, obtenemos 8 bloques geométricos que se agrupan en 4 términos algebraicos.</p>
-                            
-                            <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
-                                <h3 style="color: #8b5cf6;">El Secreto de los Coeficientes (Triángulo de Pascal)</h3>
-                                <p>¿Te has preguntado de dónde salen los números que multiplican a las letras? Provienen del Triángulo de Pascal, un patrón numérico infinito:</p>
-                                <ul style="line-height: 1.8;">
-                                    <li>Para el <b>Cuadrado</b> (exponente 2), usamos la fila 2: <b>1, 2, 1</b> $\\rightarrow (1a^2 + 2ab + 1b^2)$</li>
-                                    <li>Para el <b>Cubo</b> (exponente 3), usamos la fila 3: <b>1, 3, 3, 1</b> $\\rightarrow (1a^3 + 3a^2b + 3ab^2 + 1b^3)$</li>
-                                </ul>
-                                
-                                <div class="step" style="text-align: center; font-size: 1.2em; margin: 15px 0;">
-                                    <b>Suma:</b> $$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$
-                                    <b>Resta:</b> $$(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$$
-                                </div>
-                                <p><em>Nota importante sobre la resta:</em> Los signos se alternan invariablemente: $(+, -, +, -)$.</p>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "3. Práctica Guiada: Resolución Conjunta",
-                        contenido: `
-                            <h2>Desarrollo Analítico en Pizarra</h2>
-                            <p>Aplicaremos las fórmulas paso a paso. Para facilitar el aprendizaje del patrón, trabajaremos con expresiones sencillas. Identifique siempre quién es el "primer término" ($a$) y quién es el "segundo término" ($b$) antes de operar.</p>
-                            
-                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>1)</b> $(x + 6)^2$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>2)</b> $(2a - 3)^2$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>3)</b> $(y + 2)^3$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>4)</b> $(m - 4)^3$
-                                </div>
-                            </div>
+          {
+    id: "u3_clase1_nueva",
+    nombre: "Clase 1: Fundamentos y Suma por su Diferencia",
+    diapositivas: [
+        {
+            titulo: "1. El Motor de Todo: Propiedad Distributiva",
+            contenido: `
+                <h2>Multiplicar Polinomios Paso a Paso</h2>
+                <p>Antes de aprender cualquier "truco" o "fórmula rápida" (Producto Notable), debemos recordar cómo se multiplican las expresiones algebraicas usando la <strong>propiedad distributiva</strong>. Esta es la base de todo lo que veremos en esta unidad.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Todos contra Todos</h3>
+                    <p>Si multiplicamos dos binomios cualesquiera, cada término del primer paréntesis debe multiplicar a cada término del segundo:</p>
+                    
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        $$(2x + 3)(x - 4)$$
+                        <ul style="font-size: 0.9em; margin-top: 10px; line-height: 1.6;">
+                            <li>$2x \\cdot x = 2x^2$</li>
+                            <li>$2x \\cdot (-4) = -8x$</li>
+                            <li>$3 \\cdot x = +3x$</li>
+                            <li>$3 \\cdot (-4) = -12$</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 10px; font-weight: bold;">
+                            Desarrollo: $2x^2 - 8x + 3x - 12$<br>
+                            Resultado Final: $2x^2 - 5x - 12$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "2. El Caso Especial: Suma por su Diferencia",
+            contenido: `
+                <h2>¿Qué pasa cuando los binomios son casi idénticos?</h2>
+                <p>Existe un caso muy especial donde los dos paréntesis tienen exactamente los mismos términos, pero uno se está sumando y el otro restando. Veamos qué ocurre al aplicar la distributividad.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                    <h3 style="color: #047857;">Anulación del Centro</h3>
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(16, 185, 129, 0.05); padding: 15px;">
+                        $$(a + b)(a - b)$$
+                        <p style="font-size: 0.9em; text-align: center;">$= a^2 - ab + ba - b^2$</p>
+                        <p style="font-size: 0.85em; text-align: center; color: #047857;"><i>Como $-ab$ y $+ba$ son iguales pero de signos contrarios, ¡se anulan (dan cero)!</i></p>
+                        <div style="text-align: center; font-weight: bold; margin-top: 15px; font-size: 1.3em;">
+                            Fórmula: $$(a + b)(a - b) = a^2 - b^2$$
+                        </div>
+                    </div>
+                    <p><strong>Regla Rápida:</strong> El cuadrado del primer término, MENOS el cuadrado del segundo término.</p>
+                </div>
+            `
+        },
+        {
+            titulo: "3. El Camino Inverso: Diferencia de Cuadrados",
+            contenido: `
+                <h2>Factorización (De vuelta a los paréntesis)</h2>
+                <p>En álgebra, si sabemos ir, debemos saber volver. Si te encuentras con un polinomio que tiene solo <strong>dos términos, ambos tienen raíz cuadrada exacta y se están restando</strong>, puedes devolverlos inmediatamente a sus paréntesis originales.</p>
+                
+                <div class="info-grid">
+                    <div class="card" style="border-left-color: #8b5cf6; padding: 20px;">
+                        <h3 style="color: #6d28d9; margin-top:0;">Ejemplo 1: Identificar raíces</h3>
+                        <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                            $$x^2 - 25$$
+                        </div>
+                        <ul style="font-size: 0.95em;">
+                            <li>La raíz de $x^2$ es <strong>$x$</strong></li>
+                            <li>La raíz de $25$ es <strong>$5$</strong></li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 10px; font-weight: bold; background: rgba(139, 92, 246, 0.1); padding: 10px; border-radius: 5px;">
+                            Factorizado: $(x + 5)(x - 5)$
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #8b5cf6; padding: 20px;">
+                        <h3 style="color: #6d28d9; margin-top:0;">Ejemplo 2: Con coeficientes</h3>
+                        <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                            $$9y^2 - 64$$
+                        </div>
+                        <ul style="font-size: 0.95em;">
+                            <li>La raíz de $9y^2$ es <strong>$3y$</strong></li>
+                            <li>La raíz de $64$ es <strong>$8$</strong></li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 10px; font-weight: bold; background: rgba(139, 92, 246, 0.1); padding: 10px; border-radius: 5px;">
+                            Factorizado: $(3y + 8)(3y - 8)$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica de Consolidación",
+            contenido: `
+                <h2>Expansión y Factorización</h2>
+                <p>Demuestra tu dominio de esta propiedad. Recuerda: en la Parte I estás multiplicando (creando la diferencia), y en la Parte II estás buscando las raíces para armar los binomios originales. Tienes 10 minutos.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>I. Expanda usando la regla rápida:</b><br><br>
+                        A) $(m + 6)(m - 6)$<br>
+                        B) $(4p - 3)(4p + 3)$<br>
+                        C) $(x^2 + 10)(x^2 - 10)$
+                    </div>
+                    <div class="step">
+                        <b>II. Factorice (Diferencia de Cuadrados):</b><br><br>
+                        D) $k^2 - 49$<br>
+                        E) $25w^2 - 1$<br>
+                        F) $100 - n^2$
+                    </div>
+                </div>
 
-                            <div style="text-align: center; margin-top: 20px;">
-                                <button class="btn" onclick="document.getElementById('resp-guiadas-u3c1').classList.toggle('hidden')">Desplegar Desarrollo Formal</button>
-                            </div>
-                            
-                            <div id="resp-guiadas-u3c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
-                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Matemático Paso a Paso:</h3>
-                                <ul style="line-height: 2; font-size: 1.1rem;">
-                                    <li><b>1) TCP (Suma):</b> $(x)^2 + 2(x)(6) + (6)^2 = \\mathbf{x^2 + 12x + 36}$</li>
-                                    <li><b>2) TCP (Resta):</b> $(2a)^2 - 2(2a)(3) + (3)^2 = \\mathbf{4a^2 - 12a + 9}$</li>
-                                    <li><b>3) Cubo (Suma):</b> $(y)^3 + 3(y)^2(2) + 3(y)(2)^2 + (2)^3$<br>
-                                        $= y^3 + 3(y^2)(2) + 3(y)(4) + 8 = \\mathbf{y^3 + 6y^2 + 12y + 8}$</li>
-                                    <li><b>4) Cubo (Resta):</b> $(m)^3 - 3(m)^2(4) + 3(m)(4)^2 - (4)^3$<br>
-                                        $= m^3 - 3(m^2)(4) + 3(m)(16) - 64 = \\mathbf{m^3 - 12m^2 + 48m - 64}$
-                                    </li>
-                                </ul>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "4. Práctica Independiente",
-                        contenido: `
-                            <h2>Ejercitación Individual</h2>
-                            <p>Desarrolle las siguientes expresiones en su cuaderno. Concéntrese en aplicar correctamente el patrón y en respetar la regla de los signos (especialmente en las restas). Tiempo asignado: 12 minutos.</p>
-                            
-                            <div class="info-grid">
-                                <div class="step"><b>A)</b> $(p + 5)^2$</div>
-                                <div class="step"><b>B)</b> $(3x - 1)^2$</div>
-                                <div class="step"><b>C)</b> $(w + 3)^3$</div>
-                                <div class="step"><b>D)</b> $(n - 2)^3$</div>
-                            </div>
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">10:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c1').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
 
-                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
-                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">12:00</div>
-                                <button class="btn btn-primary" onclick="iniciarCronometro(720)" style="margin-top: 15px;">⏳ Iniciar Tiempo (12 min)</button>
-                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c1').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                <div id="resp-indep-u3_new_c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> $m^2 - 36$</li>
+                        <li><b>B)</b> $16p^2 - 9$</li>
+                        <li><b>C)</b> $x^4 - 100$ <i>(Nota: el exponente de $x^2$ al cuadrado es $x^4$)</i></li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>D)</b> $(k + 7)(k - 7)$</li>
+                        <li><b>E)</b> $(5w + 1)(5w - 1)$ <i>(La raíz de 1 es 1)</i></li>
+                        <li><b>F)</b> $(10 + n)(10 - n)$ <i>(Respeta el orden original)</i></li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u3_clase2_nueva",
+    nombre: "Clase 2: El Cuadrado de un Binomio",
+    diapositivas: [
+        {
+            titulo: "1. El Origen: Multiplicar por sí mismo",
+            contenido: `
+                <h2>Rompiendo el mito de $a^2 + b^2$</h2>
+                <p>El error más común en toda el álgebra es pensar que el exponente se reparte en una suma. Es vital entender que elevar al cuadrado significa <strong>multiplicar la base entera por sí misma</strong>. Apliquemos la distributividad que aprendimos en la clase anterior.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Desarrollo Paso a Paso</h3>
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        $$(a + b)^2 = (a + b)(a + b)$$
+                        <ul style="font-size: 0.9em; margin-top: 10px; line-height: 1.6;">
+                            <li>$a \\cdot a = a^2$</li>
+                            <li>$a \\cdot b = ab$</li>
+                            <li>$b \\cdot a = ba$ (que es lo mismo que $ab$)</li>
+                            <li>$b \\cdot b = b^2$</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <i>Sumamos los términos semejantes del centro ($ab + ab = 2ab$):</i>
+                            <div style="font-weight: bold; font-size: 1.2em; margin-top: 10px;">
+                                $$(a + b)^2 = a^2 + 2ab + b^2$$
                             </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "2. La Evidencia Geométrica",
+            contenido: `
+                <h2>¿Por qué aparece el "Doble Producto"?</h2>
+                <p>Ese misterioso término central $+ 2ab$ tiene una explicación visual perfecta. Si imaginamos un cuadrado cuyo lado mide $(a + b)$, podemos calcular su área total sumando las áreas de las piezas que lo componen.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                    <div style="text-align: center; margin: 20px 0;">
+                        <svg viewBox="0 0 220 220" style="width: 100%; max-width: 250px; border-radius: 8px;">
+                            <rect x="30" y="30" width="100" height="100" fill="rgba(59, 130, 246, 0.2)" stroke="#1d4ed8" stroke-width="2"/>
+                            <text x="80" y="85" font-size="20" text-anchor="middle" font-weight="bold" fill="#1d4ed8">a²</text>
+                            
+                            <rect x="130" y="30" width="60" height="100" fill="rgba(16, 185, 129, 0.2)" stroke="#047857" stroke-width="2"/>
+                            <text x="160" y="85" font-size="18" text-anchor="middle" font-weight="bold" fill="#047857">ab</text>
+                            
+                            <rect x="30" y="130" width="100" height="60" fill="rgba(16, 185, 129, 0.2)" stroke="#047857" stroke-width="2"/>
+                            <text x="80" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#047857">ab</text>
+                            
+                            <rect x="130" y="130" width="60" height="60" fill="rgba(234, 179, 8, 0.2)" stroke="#b45309" stroke-width="2"/>
+                            <text x="160" y="165" font-size="18" text-anchor="middle" font-weight="bold" fill="#b45309">b²</text>
+                        </svg>
+                    </div>
+                    
+                    <p style="text-align: center; font-size: 1.1em;">El área total requiere <strong>cuatro piezas</strong>: un cuadrado grande ($a^2$), un cuadrado pequeño ($b^2$) y, crucialmente, <strong>dos rectángulos idénticos</strong> de área $ab$. ¡Ese es el famoso $2ab$!</p>
+                </div>
+            `
+        },
+        {
+            titulo: "3. La Regla Rápida y los Signos",
+            contenido: `
+                <h2>La Estructura del Trinomio Cuadrado Perfecto</h2>
+                <p>El resultado de expandir un binomio al cuadrado se llama <strong>Trinomio Cuadrado Perfecto (TCP)</strong>. Para no tener que hacer la distributiva cada vez, memorizamos esta regla de oro:</p>
+                
+                <div class="info-grid">
+                    <div class="card" style="border-left-color: #8b5cf6; padding: 20px;">
+                        <h3 style="color: #6d28d9; margin-top:0;">Caso de la Suma</h3>
+                        <div style="text-align: center; font-size: 1.1em; margin: 15px 0;">
+                            $$(x + y)^2 = x^2 + 2xy + y^2$$
+                        </div>
+                        <p style="font-size: 0.9em;">
+                            1. El cuadrado del primer término.<br>
+                            2. <strong>MÁS</strong> el doble del primero por el segundo.<br>
+                            3. MÁS el cuadrado del segundo término.
+                        </p>
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #8b5cf6; padding: 20px;">
+                        <h3 style="color: #6d28d9; margin-top:0;">Caso de la Resta</h3>
+                        <div style="text-align: center; font-size: 1.1em; margin: 15px 0;">
+                            $$(x - y)^2 = x^2 - 2xy + y^2$$
+                        </div>
+                        <p style="font-size: 0.9em;">
+                            1. El cuadrado del primer término.<br>
+                            2. <strong>MENOS</strong> el doble del primero por el segundo.<br>
+                            3. MÁS el cuadrado del segundo término (siempre positivo, porque menos por menos es más).
+                        </p>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica de Expansión",
+            contenido: `
+                <h2>Aplicación de la Fórmula</h2>
+                <p>Desarrolla los siguientes binomios al cuadrado utilizando la regla rápida. Ten mucho cuidado con los coeficientes numéricos: ¡recuerda que tanto el número como la letra se elevan al cuadrado! Tienes 12 minutos.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>I. Binomios Simples:</b><br><br>
+                        A) $(x + 5)^2$<br>
+                        B) $(y - 7)^2$<br>
+                        C) $(m + 9)^2$
+                    </div>
+                    <div class="step">
+                        <b>II. Con Coeficientes Numéricos:</b><br><br>
+                        D) $(2x + 3)^2$<br>
+                        E) $(5p - 2)^2$<br>
+                        F) $(3w - 4)^2$
+                    </div>
+                </div>
 
-                            <div id="resp-indep-u3c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
-                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
-                                <ul style="line-height: 2; font-size: 1.1rem;">
-                                    <li><b>A)</b> $p^2 + 10p + 25$</li>
-                                    <li><b>B)</b> $9x^2 - 6x + 1$</li>
-                                    <li><b>C)</b> $w^3 + 9w^2 + 27w + 27$</li>
-                                    <li><b>D)</b> $n^3 - 6n^2 + 12n - 8$</li>
-                                </ul>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "5. Cierre: Análisis del Error Fundamental",
-                        contenido: `
-                            <div class="card" style="border-left-color: #ef4444;">
-                                <h2 style="color: #ef4444;">Refutación Empírica (Ticket de Salida)</h2>
-                                <p>La "distribución ilegal" del exponente es el error más castigado en el álgebra superior. Muchos estudiantes asumen erróneamente que:</p>
-                                
-                                <div class="step" style="text-align: center; font-size: 1.5rem; color: #ef4444; font-weight: bold; margin: 15px 0;">
-                                    $(a + b)^2 = a^2 + b^2 \\quad \\text{(¡TOTALMENTE FALSO!)}$
-                                </div>
-                                
-                                <div class="step" style="background: rgba(239, 68, 68, 0.05); margin-top: 20px;">
-                                    <b>Demostración de la Falacia:</b><br>
-                                    Asuma que usted es un arquitecto y le piden calcular el área de un terreno cuadrado compuesto por dos parcelas, donde $a = 10$ metros y $b = 5$ metros. <br><br>
-                                    1) Calcule el área real del terreno usando la fórmula correcta: $(10 + 5)^2$.<br>
-                                    2) Calcule el área usando la fórmula errónea del estudiante: $10^2 + 5^2$.<br>
-                                    3) <b>Pregunta:</b> ¿Cuántos metros cuadrados de terreno "desaparecieron" por culpa del error matemático? ¿A qué piezas del dibujo (Slide 1) corresponden esos metros perdidos? Redacte su respuesta.
-                                </div>
-                            </div>
-                        `
-                    }
-                ]
-            },
-            {
-                id: "u3_clase3",
-                nombre: "Clase 3: Suma por su Diferencia",
-                diapositivas: [
-                    {
-                        titulo: "1. Concepto y Fórmula Estructural",
-                        contenido: `
-                            <h2>La Suma por su Diferencia</h2>
-                            <p>Este es uno de los productos notables más rápidos de resolver. Ocurre cuando multiplicamos dos binomios que son <strong>exactamente iguales</strong>, con la única diferencia de que uno se está sumando y el otro se está restando.</p>
-                            
-                            <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
-                                <h3 style="color: #3b82f6;">Diferencia de Cuadrados</h3>
-                                <p>Al multiplicar $(a + b)(a - b)$ término a término, los términos centrales ($+ab$ y $-ab$) se anulan o cancelan entre sí ("se hacen cero"). Por esto, el resultado siempre será el cuadrado del primer término <b>menos</b> el cuadrado del segundo término.</p>
-                                
-                                <div class="step" style="text-align: center; font-size: 1.5em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
-                                    $$(a + b)(a - b) = a^2 - b^2$$
-                                </div>
-                                <p style="text-align: center; font-size: 0.95rem; color: #64748b;"><em>Nota: El orden de los paréntesis no altera el resultado: $(a - b)(a + b)$ genera exactamente la misma respuesta.</em></p>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "2. Demostración Geométrica",
-                        contenido: `
-                            <h2>Visualizando la Diferencia de Cuadrados</h2>
-                            <p>Geométricamente, la expresión $a^2 - b^2$ representa el área de un cuadrado grande ($a^2$) al que le hemos "recortado" un cuadrado más pequeño ($b^2$) en una esquina.</p>
-                            
-                            <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
-                                <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-                                    <svg viewBox="0 0 200 200" style="width: 100%; max-width: 180px;">
-                                        <rect x="10" y="10" width="160" height="160" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
-                                        <text x="80" y="90" font-size="24" text-anchor="middle" font-weight="bold" fill="#064e3b">a²</text>
-                                        
-                                        <rect x="110" y="10" width="60" height="60" fill="#fff" stroke="#ef4444" stroke-width="2" stroke-dasharray="4"/>
-                                        <text x="140" y="45" font-size="18" text-anchor="middle" font-weight="bold" fill="#ef4444">-b²</text>
-                                        
-                                        <text x="90" y="190" font-size="16" text-anchor="middle" font-style="italic">a</text>
-                                    </svg>
-                                    
-                                    <div style="font-size: 2rem; font-weight: bold; color: #64748b;">=</div>
-                                    
-                                    <svg viewBox="0 0 260 140" style="width: 100%; max-width: 220px;">
-                                        <rect x="10" y="20" width="220" height="100" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
-                                        <line x1="160" y1="20" x2="160" y2="120" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4"/>
-                                        
-                                        <text x="120" y="75" font-size="16" text-anchor="middle" font-weight="bold" fill="#1e3a8a">Área = (a + b)(a - b)</text>
-                                        
-                                        <text x="85" y="15" font-size="14" text-anchor="middle" font-style="italic">a</text>
-                                        <text x="190" y="15" font-size="14" text-anchor="middle" font-style="italic">b</text>
-                                        <text x="245" y="75" font-size="14" text-anchor="middle" font-style="italic">a - b</text>
-                                    </svg>
-                                </div>
-                                
-                                <p style="text-align: justify;">Si tomamos la pieza sobrante en forma de "L" (izquierda) y reacomodamos uno de sus rectángulos, formaremos un nuevo rectángulo perfecto (derecha) cuya base mide $(a+b)$ y su altura mide $(a-b)$. ¡Por eso ambas expresiones son equivalentes!</p>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "3. Práctica Guiada: Resolución Conjunta",
-                        contenido: `
-                            <h2>Aplicación del Patrón en Pizarra</h2>
-                            <p>Recuerde: Para aplicar esta regla, los paréntesis deben ser idénticos en sus términos, variando únicamente el signo central.</p>
-                            
-                            <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>1)</b> $(x + 4)(x - 4)$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>2)</b> $(y - 7)(y + 7)$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>3)</b> $(2m + 5)(2m - 5)$
-                                </div>
-                                <div class="step" style="font-size: 1.3rem; text-align: center;">
-                                    <b>4)</b> $(3p - 1)(3p + 1)$
-                                </div>
-                            </div>
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">12:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(720)" style="margin-top: 15px;">⏳ Iniciar Tiempo (12 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c2').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
 
-                            <div style="text-align: center; margin-top: 20px;">
-                                <button class="btn" onclick="document.getElementById('resp-guiadas-u3c2').classList.toggle('hidden')">Desplegar Desarrollo Formal</button>
-                            </div>
-                            
-                            <div id="resp-guiadas-u3c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(59, 130, 246, 0.1); border-left: 5px solid #3b82f6; border-radius: 8px;">
-                                <h3 style="color: #3b82f6; margin-top: 0;">Desarrollo Matemático Paso a Paso:</h3>
-                                <ul style="line-height: 2; font-size: 1.1rem;">
-                                    <li><b>1)</b> $(x)^2 - (4)^2 = \\mathbf{x^2 - 16}$</li>
-                                    <li><b>2)</b> $(y)^2 - (7)^2 = \\mathbf{y^2 - 49}$ <i>(El orden de los signos no afecta)</i></li>
-                                    <li><b>3)</b> $(2m)^2 - (5)^2 = \\mathbf{4m^2 - 25}$ <i>(Recuerde elevar también el número 2)</i></li>
-                                    <li><b>4)</b> $(3p)^2 - (1)^2 = \\mathbf{9p^2 - 1}$
-                                    </li>
-                                </ul>
-                            </div>
-                        `
-                    },
-                    {
-                        titulo: "4. Práctica Independiente",
-                        contenido: `
-                            <h2>Ejercitación Individual</h2>
-                            <p>Resuelva las siguientes multiplicaciones algebraicas en su cuaderno aplicando la fórmula de la diferencia de cuadrados. Concéntrese en elevar correctamente cada coeficiente numérico. Dispone de 8 minutos.</p>
-                            
-                            <div class="info-grid">
-                                <div class="step"><b>A)</b> $(w + 9)(w - 9)$</div>
-                                <div class="step"><b>B)</b> $(n - 10)(n + 10)$</div>
-                                <div class="step"><b>C)</b> $(4k + 3)(4k - 3)$</div>
-                                <div class="step"><b>D)</b> $(5x - 2)(5x + 2)$</div>
-                            </div>
+                <div id="resp-indep-u3_new_c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> $x^2 + 10x + 25$</li>
+                        <li><b>B)</b> $y^2 - 14y + 49$ <i>(Atención al signo menos en el centro)</i></li>
+                        <li><b>C)</b> $m^2 + 18m + 81$</li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>D)</b> $(2x)^2 + 2(2x)(3) + (3)^2 \\rightarrow \\mathbf{4x^2 + 12x + 9}$</li>
+                        <li><b>E)</b> $(5p)^2 - 2(5p)(2) + (2)^2 \\rightarrow \\mathbf{25p^2 - 20p + 4}$</li>
+                        <li><b>F)</b> $(3w)^2 - 2(3w)(4) + (4)^2 \\rightarrow \\mathbf{9w^2 - 24w + 16}$</li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u3_clase3_nueva",
+    nombre: "Clase 3: Ingeniería Inversa del TCP y Completación",
+    diapositivas: [
+        {
+            titulo: "1. El Arte de Desarmar: Factorización",
+            contenido: `
+                <h2>¿Cómo reconocer un Trinomio Cuadrado Perfecto?</h2>
+                <p>En la clase anterior aprendimos a construir un TCP multiplicando. Ahora haremos lo contrario: dado un polinomio de tres términos, debemos descubrir si proviene de un binomio al cuadrado. A esto le llamamos <strong>factorizar</strong>.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Los 3 pasos del reconocimiento</h3>
+                    <p>Para que un trinomio como $x^2 + 10x + 25$ sea considerado "Perfecto", debe cumplir tres reglas estrictas:</p>
+                    
+                    <div class="step" style="font-size: 1.1em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        <ol style="line-height: 1.8;">
+                            <li>El primer término debe tener raíz cuadrada exacta: <b>La raíz de $x^2$ es $x$</b>.</li>
+                            <li>El tercer término debe ser positivo y tener raíz exacta: <b>La raíz de $25$ es $5$</b>.</li>
+                            <li>El término del medio debe ser exactamente el <strong>doble</strong> del producto de esas dos raíces: <b>$2 \\cdot (x) \\cdot (5) = 10x$</b>.</li>
+                        </ol>
+                        <div style="text-align: center; margin-top: 15px; font-weight: bold; font-size: 1.2em;">
+                            Como cumple todo, lo factorizamos: $$(x + 5)^2$$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "2. La Prueba de Fuego: Falsos Perfectos",
+            contenido: `
+                <h2>No todo trinomio es un TCP</h2>
+                <p>Es muy fácil dejarse engañar visualmente. A veces, los extremos tienen raíces exactas, pero el centro no coincide. Veamos la importancia de comprobar siempre el término central.</p>
+                
+                <div class="info-grid">
+                    <div class="card" style="border-left-color: #10b981; padding: 20px; background: rgba(16, 185, 129, 0.05);">
+                        <h3 style="color: #047857; margin-top:0;">Ejemplo Verdadero</h3>
+                        <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                            $$4y^2 - 12y + 9$$
+                        </div>
+                        <ul style="font-size: 0.95em;">
+                            <li>Raíz de $4y^2$ $\\rightarrow 2y$</li>
+                            <li>Raíz de $9$ $\\rightarrow 3$</li>
+                            <li>Prueba: $2 \\cdot (2y) \\cdot (3) = 12y$</li>
+                        </ul>
+                        <div style="text-align: center; font-weight: bold; color: #047857;">¡Sí es TCP! $\\rightarrow (2y - 3)^2$</div>
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #ef4444; padding: 20px; background: rgba(239, 68, 68, 0.05);">
+                        <h3 style="color: #ef4444; margin-top:0;">El Impostor (Falso TCP)</h3>
+                        <div style="text-align: center; font-size: 1.2em; margin: 15px 0;">
+                            $$m^2 + 8m + 16$$ 
+                            <i>Wait, este sí es... veamos otro:</i><br>
+                            $$m^2 + 10m + 16$$
+                        </div>
+                        <ul style="font-size: 0.95em;">
+                            <li>Raíz de $m^2$ $\\rightarrow m$</li>
+                            <li>Raíz de $16$ $\\rightarrow 4$</li>
+                            <li>Prueba: $2 \\cdot (m) \\cdot (4) = \\mathbf{8m}$</li>
+                        </ul>
+                        <div style="text-align: center; font-weight: bold; color: #ef4444;">$8m$ no es $10m$. ¡NO es TCP!</div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "3. Completación de Cuadrados",
+            contenido: `
+                <h2>Encontrando la pieza faltante</h2>
+                <p>¿Qué pasa si tenemos los dos primeros términos y queremos <strong>forzar</strong> que se convierta en un Trinomio Cuadrado Perfecto? A este proceso le llamamos "completar el cuadrado" y es una herramienta vital para la geometría analítica y ecuaciones futuras.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
+                    <h3 style="color: #6d28d9;">El Algoritmo de la Mitad al Cuadrado</h3>
+                    <p>Imagina que tienes: $x^2 + 14x + \\mathbf{?}$</p>
+                    
+                    <div class="step" style="background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        <p>Sabemos que el término central ($14x$) representa el "doble del primero por el segundo". Para descubrir el número faltante, solo debes seguir dos pasos numéricos con el coeficiente central (el 14):</p>
+                        <ol style="font-size: 1.1em; line-height: 1.8; margin-top: 10px;">
+                            <li><strong>Divídelo a la mitad:</strong> $14 \\div 2 = 7$</li>
+                            <li><strong>Elévalo al cuadrado:</strong> $7^2 = \\mathbf{49}$</li>
+                        </ol>
+                        <div style="text-align: center; font-size: 1.2em; margin-top: 15px; font-weight: bold;">
+                            Trinomio completado: $$x^2 + 14x + 49$$
+                            Su factorización: $$(x + 7)^2$$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica Independiente: Reconocer y Completar",
+            contenido: `
+                <h2>Demuestra tu Análisis</h2>
+                <p>Esta práctica evalúa tu capacidad para aplicar la prueba del ácido y reparar trinomios incompletos. Tienes 15 minutos para resolver.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>I. Verifique si es TCP. Si lo es, factorice. Si NO lo es, escriba "NO":</b><br><br>
+                        A) $x^2 + 18x + 81$<br>
+                        B) $y^2 - 6y + 12$<br>
+                        C) $9p^2 - 24p + 16$
+                    </div>
+                    <div class="step">
+                        <b>II. Complete el término numérico faltante para formar un TCP:</b><br><br>
+                        D) $m^2 + 20m + \\mathbf{?}$<br>
+                        E) $k^2 - 8k + \\mathbf{?}$<br>
+                        F) $w^2 + 2w + \\mathbf{?}$
+                    </div>
+                </div>
 
-                            <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 15px;">
-                                <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--accent); font-family: monospace;">08:00</div>
-                                <button class="btn btn-primary" onclick="iniciarCronometro(480)" style="margin-top: 15px;">⏳ Iniciar Tiempo (8 min)</button>
-                                <button class="btn" style="margin-top: 15px; border-color: #10b981; color: #10b981;" onclick="document.getElementById('resp-indep-u3c2').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
-                            </div>
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">15:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(900)" style="margin-top: 15px;">⏳ Iniciar Tiempo (15 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c3').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
 
-                            <div id="resp-indep-u3c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #10b981; border-radius: 8px;">
-                                <h3 style="color: #10b981; margin-top: 0;">Resultados Oficiales:</h3>
-                                <ul style="line-height: 2; font-size: 1.1rem;">
-                                    <li><b>A)</b> $w^2 - 81$</li>
-                                    <li><b>B)</b> $n^2 - 100$</li>
-                                    <li><b>C)</b> $16k^2 - 9$</li>
-                                    <li><b>D)</b> $25x^2 - 4$</li>
-                                </ul>
+                <div id="resp-indep-u3_new_c3" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> SÍ. Raíces: $x, 9$. Prueba: $2(x)(9)=18x$. Factorizado: <b>$(x + 9)^2$</b></li>
+                        <li><b>B)</b> NO. Raíz de 12 no es exacta, y $2(y)(?\\!) \\neq 6y$.</li>
+                        <li><b>C)</b> SÍ. Raíces: $3p, 4$. Prueba: $2(3p)(4)=24p$. Factorizado: <b>$(3p - 4)^2$</b></li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>D)</b> Mitad de 20 es 10; $10^2 = \\mathbf{100}$.</li>
+                        <li><b>E)</b> Mitad de -8 es -4; $(-4)^2 = \\mathbf{16}$. <i>(Siempre es positivo)</i></li>
+                        <li><b>F)</b> Mitad de 2 es 1; $1^2 = \\mathbf{1}$.</li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u3_clase4_nueva",
+    nombre: "Clase 4: Binomios con Término Común",
+    diapositivas: [
+        {
+            titulo: "1. El Tercer Producto Notable",
+            contenido: `
+                <h2>¿Qué pasa cuando solo comparten una letra?</h2>
+                <p>Ya vimos qué pasa si son idénticos (Cuadrado de Binomio) o si cambian solo en el signo (Suma por Diferencia). El tercer caso ocurre cuando multiplicamos dos binomios que tienen <strong>un solo término en común</strong> (generalmente la incógnita $x$) y los otros dos son números distintos.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Desarrollo por Distributividad</h3>
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        $$(x + a)(x + b)$$
+                        <p style="font-size: 0.9em; text-align: center; margin: 10px 0;">$= x^2 + xb + ax + ab$</p>
+                        <div style="text-align: center; margin-top: 10px;">
+                            <i>Agrupamos los términos centrales que comparten la $x$:</i><br>
+                            <div style="font-weight: bold; margin-top: 10px; font-size: 1.1em;">
+                                Fórmula: $$(x + a)(x + b) = x^2 + (a + b)x + (ab)$$
                             </div>
-                        `
-                    },
-                    {
-                        titulo: "5. Cierre: El Truco Mental",
-                        contenido: `
-                            <div class="card" style="border-left-color: #8b5cf6;">
-                                <h2 style="color: #8b5cf6;">El Truco del Calculista (Ticket de Salida)</h2>
-                                <p>El álgebra no solo sirve para calcular letras; nos permite crear "atajos" para cálculos numéricos mentales muy complejos.</p>
-                                
-                                <div class="step" style="background: rgba(139, 92, 246, 0.05); margin-top: 20px;">
-                                    <b>Ejemplo:</b> ¿Cómo calcular mentalmente $21 \\times 19$ de forma rápida?<br>
-                                    Podemos reescribir esos números como una Suma por su Diferencia:<br>
-                                    $21 \\times 19 = (20 + 1)(20 - 1)$<br>
-                                    Aplicando la fórmula: $20^2 - 1^2$<br>
-                                    Resolviendo: $400 - 1 = \\mathbf{399}$
-                                </div>
-                                
-                                <div class="step" style="margin-top: 20px; border-left: 4px solid #f59e0b;">
-                                    <b>Su Turno (Desafío):</b><br>
-                                    Utilizando esta misma estrategia de "Suma por su Diferencia", calcule mentalmente (y demuestre los pasos en su cuaderno) el resultado de la siguiente multiplicación:<br><br>
-                                    <div style="text-align: center; font-size: 1.8rem; font-weight: bold; margin: 10px 0;">
-                                        $42 \\times 38$
-                                    </div>
-                                    <i>Pista: Busque el número "redondo" que se encuentra exactamente al medio de ambos.</i>
-                                </div>
-                            </div>
-                        `
-                    }
-                ]
-            },
+                        </div>
+                    </div>
+                    <p><strong>La Regla en Palabras:</strong> El cuadrado del término común, MÁS la <b>suma algebraica</b> de los distintos multiplicada por $x$, MÁS la <b>multiplicación</b> de los distintos.</p>
+                </div>
+            `
+        },
+        {
+            titulo: "2. Visualización Geométrica",
+            contenido: `
+                <h2>Componiendo un Rectángulo</h2>
+                <p>A diferencia del Cuadrado de Binomio, aquí las medidas de los lados no son iguales. Estamos calculando el área de un <strong>rectángulo</strong> de base $(x+b)$ y altura $(x+a)$.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                    <div style="text-align: center; margin: 20px 0;">
+                        <svg viewBox="0 0 250 250" style="width: 100%; max-width: 280px; border-radius: 8px;">
+                            <rect x="30" y="30" width="120" height="120" fill="rgba(59, 130, 246, 0.2)" stroke="#1d4ed8" stroke-width="2"/>
+                            <text x="90" y="95" font-size="20" text-anchor="middle" font-weight="bold" fill="#1d4ed8">x²</text>
+                            
+                            <rect x="150" y="30" width="70" height="120" fill="rgba(16, 185, 129, 0.2)" stroke="#047857" stroke-width="2"/>
+                            <text x="185" y="95" font-size="18" text-anchor="middle" font-weight="bold" fill="#047857">bx</text>
+                            
+                            <rect x="30" y="150" width="120" height="60" fill="rgba(16, 185, 129, 0.2)" stroke="#047857" stroke-width="2"/>
+                            <text x="90" y="185" font-size="18" text-anchor="middle" font-weight="bold" fill="#047857">ax</text>
+                            
+                            <rect x="150" y="150" width="70" height="60" fill="rgba(234, 179, 8, 0.2)" stroke="#b45309" stroke-width="2"/>
+                            <text x="185" y="185" font-size="18" text-anchor="middle" font-weight="bold" fill="#b45309">ab</text>
+                        </svg>
+                    </div>
+                    
+                    <p style="text-align: center;">El área se divide en 4 zonas: un cuadrado ($x^2$), dos rectángulos diferentes pero que tienen lado $x$ (por eso sus áreas se suman: $ax + bx$), y un rectángulo constante formado por los números ($ab$).</p>
+                </div>
+            `
+        },
+        {
+            titulo: "3. La Batalla de los Signos",
+            contenido: `
+                <h2>Aplicando la Regla Rápida sin fallar</h2>
+                <p>El verdadero reto de este producto notable no es la memoria, sino respetar estrictamente las reglas de signos al sumar y multiplicar en el centro y en el extremo.</p>
+                
+                <div class="info-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="step" style="font-size: 1.1rem; background: rgba(59, 130, 246, 0.05);">
+                        <b>Caso 1: Ambos Positivos</b><br>
+                        $(x + 5)(x + 3)$<br>
+                        <ul style="margin-top: 5px; padding-left: 20px; font-size: 0.9em;">
+                            <li>Suma: $5 + 3 = \\mathbf{+8}$</li>
+                            <li>Mult: $5 \\cdot 3 = \\mathbf{+15}$</li>
+                        </ul>
+                        <b>$= x^2 + 8x + 15$</b>
+                    </div>
+                    <div class="step" style="font-size: 1.1rem; background: rgba(239, 68, 68, 0.05);">
+                        <b>Caso 2: Positivo Mayor</b><br>
+                        $(y + 7)(y - 2)$<br>
+                        <ul style="margin-top: 5px; padding-left: 20px; font-size: 0.9em;">
+                            <li>Suma: $7 - 2 = \\mathbf{+5}$</li>
+                            <li>Mult: $7 \\cdot (-2) = \\mathbf{-14}$</li>
+                        </ul>
+                        <b>$= y^2 + 5y - 14$</b>
+                    </div>
+                    <div class="step" style="font-size: 1.1rem; background: rgba(245, 158, 11, 0.05);">
+                        <b>Caso 3: Negativo Mayor</b><br>
+                        $(m - 8)(m + 3)$<br>
+                        <ul style="margin-top: 5px; padding-left: 20px; font-size: 0.9em;">
+                            <li>Suma: $-8 + 3 = \\mathbf{-5}$</li>
+                            <li>Mult: $(-8) \\cdot 3 = \\mathbf{-24}$</li>
+                        </ul>
+                        <b>$= m^2 - 5m - 24$</b>
+                    </div>
+                    <div class="step" style="font-size: 1.1rem; background: rgba(139, 92, 246, 0.05);">
+                        <b>Caso 4: Ambos Negativos</b><br>
+                        $(p - 4)(p - 6)$<br>
+                        <ul style="margin-top: 5px; padding-left: 20px; font-size: 0.9em;">
+                            <li>Suma: $-4 - 6 = \\mathbf{-10}$</li>
+                            <li>Mult: $(-4) \\cdot (-6) = \\mathbf{+24}$</li>
+                        </ul>
+                        <b>$= p^2 - 10p + 24$</b>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica de Expansión",
+            contenido: `
+                <h2>Entrenamiento de Precisión</h2>
+                <p>Desarrolla los siguientes productos. Concéntrate en hacer mentalmente la suma y la multiplicación de los números. Si los signos son iguales se suman, si son distintos se restan conservando el signo del mayor. ¡Cuidado con el último término! Tienes 10 minutos.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>I. Expansión Básica:</b><br><br>
+                        A) $(x + 9)(x + 2)$<br>
+                        B) $(y - 5)(y - 3)$<br>
+                        C) $(w + 8)(w - 4)$
+                    </div>
+                    <div class="step">
+                        <b>II. Nivel Intermedio (cuidado con los signos):</b><br><br>
+                        D) $(k - 10)(k + 2)$<br>
+                        E) $(m - 1)(m - 12)$<br>
+                        F) $(p + 7)(p - 11)$
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">10:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c4').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
+
+                <div id="resp-indep-u3_new_c4" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> $x^2 + 11x + 18$ <i>(9+2=11; 9*2=18)</i></li>
+                        <li><b>B)</b> $y^2 - 8y + 15$ <i>(-5-3=-8; -5*-3=+15)</i></li>
+                        <li><b>C)</b> $w^2 + 4w - 32$ <i>(+8-4=+4; 8*-4=-32)</i></li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>D)</b> $k^2 - 8k - 20$ <i>(-10+2=-8; -10*2=-20)</i></li>
+                        <li><b>E)</b> $m^2 - 13m + 12$ <i>(-1-12=-13; -1*-12=+12)</i></li>
+                        <li><b>F)</b> $p^2 - 4p - 77$ <i>(+7-11=-4; 7*-11=-77)</i></li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u3_clase5_nueva",
+    nombre: "Clase 5: Factorización de Trinomios (x² + bx + c)",
+    diapositivas: [
+        {
+            titulo: "1. El Acertijo Numérico",
+            contenido: `
+                <h2>Buscando los Factores Perdidos</h2>
+                <p>En la clase anterior, partimos de dos binomios para llegar a un trinomio. Hoy haremos exactamente lo contrario: nos darán el resultado final (el trinomio) y debemos descubrir qué binomios se multiplicaron originalmente. Este es uno de los "acertijos" más clásicos del álgebra.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
+                    <h3 style="color: #6d28d9;">La Regla de Oro de la Factorización</h3>
+                    <p>Si tenemos un trinomio de la forma <strong>$x^2 + bx + c$</strong>, debemos encontrar dos números misteriosos que cumplan dos condiciones al mismo tiempo:</p>
+                    
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        <ul style="line-height: 1.8;">
+                            <li>Condición 1: Multiplicados deben dar el último término (<strong>$c$</strong>).</li>
+                            <li>Condición 2: Sumados (o restados) deben dar el término central (<strong>$b$</strong>).</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 15px; font-weight: bold; font-size: 1.1em; color: #6d28d9;">
+                            Si esos números son $m$ y $n$, la factorización es: $$(x + m)(x + n)$$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "2. Estrategia de Búsqueda Efectiva",
+            contenido: `
+                <h2>¿Por dónde empezar: Suma o Multiplicación?</h2>
+                <p>El error de muchos estudiantes es intentar adivinar los números pensando primero en la suma. ¡Hay infinitas parejas de números que suman 7! (Ej: $10-3$, $100-93$, $4+3$). En cambio, <strong>las parejas enteras que multiplican un número son muy pocas</strong>. La estrategia correcta es mirar siempre primero el último término.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Ejemplo Analizado: $x^2 + 7x + 10$</h3>
+                    
+                    <div class="step" style="background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        <p><b>Paso 1: Enfócate en la multiplicación ($+10$).</b><br>
+                        ¿Qué parejas de números multiplicados dan $10$? Solo hay dos opciones enteras positivas:<br>
+                        $(1 \\cdot 10)$ y $(2 \\cdot 5)$</p>
+                        
+                        <p style="margin-top: 10px;"><b>Paso 2: Comprueba la suma ($+7$).</b><br>
+                        De las parejas anteriores, ¿cuál suma $7$?<br>
+                        $1 + 10 = 11$ <i>(Descartada)</i><br>
+                        $2 + 5 = \\mathbf{7}$ <i>(¡Esta es!)</i></p>
+                        
+                        <div style="text-align: center; margin-top: 15px; font-weight: bold; font-size: 1.2em;">
+                            Trinomio factorizado: $$(x + 2)(x + 5)$$
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "3. La Brújula de los Signos",
+            contenido: `
+                <h2>Descifrando las Pistas del Trinomio</h2>
+                <p>El signo del último término ($c$) es tu mejor pista para saber qué signos llevarán los binomios.</p>
+                
+                <div class="info-grid">
+                    <div class="card" style="border-left-color: #10b981; padding: 20px; background: rgba(16, 185, 129, 0.05);">
+                        <h3 style="color: #047857; margin-top:0;">Si el último es POSITIVO (+)</h3>
+                        <p>Significa que los dos números tienen el <strong>MISMO SIGNO</strong> (más por más da +, menos por menos da +).</p>
+                        <hr style="border-top: 1px dashed #10b981; margin: 10px 0;">
+                        <b>Ejemplo:</b> $y^2 - 8y + 15$<br>
+                        <i>(Multiplican +15, suman -8)</i><br>
+                        Como suman negativo, ambos deben ser negativos: $-3$ y $-5$.<br>
+                        <b>$(y - 3)(y - 5)$</b>
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #ef4444; padding: 20px; background: rgba(239, 68, 68, 0.05);">
+                        <h3 style="color: #ef4444; margin-top:0;">Si el último es NEGATIVO (-)</h3>
+                        <p>Significa que los números tienen <strong>SIGNOS DISTINTOS</strong> (más por menos da -). El mayor lleva el signo del medio.</p>
+                        <hr style="border-top: 1px dashed #ef4444; margin: 10px 0;">
+                        <b>Ejemplo:</b> $w^2 + 2w - 24$<br>
+                        <i>(Multiplican -24, restan +2)</i><br>
+                        Factores de 24: $6$ y $4$. Como el centro es $+$, el mayor es $+$.<br>
+                        <b>$(w + 6)(w - 4)$</b>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica Independiente: Factorización Rápida",
+            contenido: `
+                <h2>Resuelve el Acertijo</h2>
+                <p>Aplica tu razonamiento deductivo para factorizar los siguientes trinomios. Recuerda el orden: 1° analiza los factores de la multiplicación, 2° verifica la suma/resta con los signos correctos. Tienes 15 minutos.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>I. Mismo Signo (Último término positivo):</b><br><br>
+                        A) $x^2 + 9x + 20$<br>
+                        B) $k^2 - 11k + 30$<br>
+                        C) $p^2 + 10p + 21$
+                    </div>
+                    <div class="step">
+                        <b>II. Signos Diferentes (Último término negativo):</b><br><br>
+                        D) $y^2 + 4y - 12$<br>
+                        E) $m^2 - 3m - 40$<br>
+                        F) $w^2 + w - 56$
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">15:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(900)" style="margin-top: 15px;">⏳ Iniciar Tiempo (15 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c5').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
+
+                <div id="resp-indep-u3_new_c5" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> $(x + 5)(x + 4)$ <i>(Multiplican 20, suman 9)</i></li>
+                        <li><b>B)</b> $(k - 6)(k - 5)$ <i>(Multiplican 30, suman -11)</i></li>
+                        <li><b>C)</b> $(p + 7)(p + 3)$ <i>(Multiplican 21, suman 10)</i></li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>D)</b> $(y + 6)(y - 2)$ <i>(Multiplican -12, ganan los positivos por 4)</i></li>
+                        <li><b>E)</b> $(m - 8)(m + 5)$ <i>(Multiplican -40, ganan los negativos por 3)</i></li>
+                        <li><b>F)</b> $(w + 8)(w - 7)$ <i>(La $w$ tiene un $1$ invisible. Factores de 56 con diferencia de 1 son 8 y 7. Gana positivo.)</i></li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u3_clase6_nueva",
+    nombre: "Clase 6: Cubo de un Binomio y Síntesis Final",
+    diapositivas: [
+        {
+            titulo: "1. Saltando a la 3D: El Cubo de un Binomio",
+            contenido: `
+                <h2>De Áreas a Volúmenes</h2>
+                <p>Hasta ahora hemos trabajado con binomios al cuadrado, que geométricamente representan el <strong>área</strong> de figuras planas. Pero, ¿qué pasa si elevamos un binomio a la tercera potencia? Pasamos a la 3D: estamos calculando el <strong>volumen de un cubo</strong> de arista $(a+b)$.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">La Fórmula Extendida</h3>
+                    <div class="step" style="font-size: 1.2em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        $$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$$
+                        <div style="font-size: 0.8em; margin-top: 15px; text-align: left;">
+                            <b>¿Qué significa cada pieza geométricamente?</b>
+                            <ul style="line-height: 1.6; margin-top: 5px;">
+                                <li><b>$a^3$</b>: Un cubo grande.</li>
+                                <li><b>$3a^2b$</b>: Tres prismas rectangulares (paredes).</li>
+                                <li><b>$3ab^2$</b>: Tres prismas rectangulares más delgados.</li>
+                                <li><b>$b^3$</b>: Un cubo pequeñito en la esquina.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9em; text-align: center;"><em>Si fuera resta $(a - b)^3$, los signos se alternan: $a^3 - 3a^2b + 3ab^2 - b^3$</em></p>
+                </div>
+            `
+        },
+        {
+            titulo: "2. El Secreto de los Coeficientes: Triángulo de Pascal",
+            contenido: `
+                <h2>Un atajo para cualquier potencia</h2>
+                <p>¿Notaste de dónde salieron los números de nuestras fórmulas? En el cuadrado era <b>1, 2, 1</b> ($a^2 + 2ab + b^2$). En el cubo es <b>1, 3, 3, 1</b>. Estos números provienen de un patrón matemático milenario llamado el <strong>Triángulo de Pascal</strong>.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6; text-align: center;">
+                    <div style="font-family: monospace; font-size: 1.3em; line-height: 1.8; background: rgba(139, 92, 246, 0.05); padding: 20px; border-radius: 8px;">
+                        <div style="color: #6b7280;">(Potencia 0) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</div>
+                        <div style="color: #6b7280;">(Potencia 1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 1</div>
+                        <div style="color: #6d28d9; font-weight: bold;">(Potencia 2) &nbsp;&nbsp;&nbsp; 1 &nbsp; 2 &nbsp; 1 &nbsp;&nbsp;&nbsp; <span style="font-size: 0.7em;">← Cuadrado de Binomio</span></div>
+                        <div style="color: #6d28d9; font-weight: bold;">(Potencia 3) &nbsp; 1 &nbsp; 3 &nbsp; 3 &nbsp; 1 &nbsp; <span style="font-size: 0.7em;">← Cubo de Binomio</span></div>
+                        <div style="color: #6b7280;">(Potencia 4) 1 &nbsp; 4 &nbsp; 6 &nbsp; 4 &nbsp; 1</div>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.95em;">Cada número se obtiene <strong>sumando los dos números que tiene justo encima</strong>. Así no necesitas memorizar coeficientes, ¡puedes construirlos tú mismo!</p>
+                </div>
+            `
+        },
+        {
+            titulo: "3. El Mapa de Decisión (El Ojo Algebraico)",
+            contenido: `
+                <h2>¿Cómo saber qué regla aplicar?</h2>
+                <p>En un examen, los polinomios no vienen etiquetados. Para saber cómo factorizar (volver a los paréntesis), debes contar los términos y buscar pistas clave.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #10b981;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 5px; text-align: left; font-size: 0.95em;">
+                        <tr style="background: rgba(16, 185, 129, 0.1); border-bottom: 2px solid #10b981;">
+                            <th style="padding: 10px;">Forma</th>
+                            <th style="padding: 10px;">Qué buscar</th>
+                            <th style="padding: 10px;">Tu Respuesta</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 10px;"><b>2 Términos</b><br>Ej: $x^2 - 49$</td>
+                            <td style="padding: 10px;">¿Es una RESTA? ¿Tienen raíces exactas?</td>
+                            <td style="padding: 10px;"><b>Suma por Diferencia</b><br>$(x + 7)(x - 7)$</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 10px;"><b>3 Términos</b><br>Ej: $x^2 + 10x + 25$</td>
+                            <td style="padding: 10px;">¿Los extremos tienen raíz? ¿El centro es el <i>doble producto</i>?</td>
+                            <td style="padding: 10px;"><b>Trinomio Cuadrado Perf.</b><br>$(x + 5)^2$</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;"><b>3 Términos</b><br>Ej: $x^2 + 7x + 12$</td>
+                            <td style="padding: 10px;">El último no tiene raíz exacta. Busca factores que multipliquen 12 y sumen 7.</td>
+                            <td style="padding: 10px;"><b>Término Común</b><br>$(x + 4)(x + 3)$</td>
+                        </tr>
+                    </table>
+                </div>
+            `
+        },
+        {
+            titulo: "4. Desafío Final: Mezcla Total",
+            contenido: `
+                <h2>Evaluación de Unidad</h2>
+                <p>Es hora de demostrar todo lo aprendido. En esta sección final, los ejercicios están mezclados. Debes analizar cada uno, decidir qué producto o técnica de factorización usar, y resolver. Tienes 20 minutos.</p>
+                
+                <div class="info-grid">
+                    <div class="step" style="background: rgba(59, 130, 246, 0.05);">
+                        <b style="color: #1d4ed8;">I. Expande (Multiplica):</b><br><br>
+                        A) $(m - 8)(m + 8)$<br>
+                        B) $(3y + 2)^2$<br>
+                        C) $(x - 5)(x + 9)$<br>
+                        D) $(p + 2)^3$
+                    </div>
+                    <div class="step" style="background: rgba(16, 185, 129, 0.05);">
+                        <b style="color: #047857;">II. Factoriza (De vuelta al paréntesis):</b><br><br>
+                        E) $w^2 - 81$<br>
+                        F) $k^2 - 14k + 49$<br>
+                        G) $y^2 + 5y - 24$<br>
+                        H) $m^2 + 13m + 42$
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">20:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(1200)" style="margin-top: 15px;">⏳ Iniciar Tiempo (20 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u3_new_c6').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
+
+                <div id="resp-indep-u3_new_c6" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> $m^2 - 64$ <i>(Suma por Diferencia)</i></li>
+                        <li><b>B)</b> $9y^2 + 12y + 4$ <i>(Cuadrado de Binomio)</i></li>
+                        <li><b>C)</b> $x^2 + 4x - 45$ <i>(Término Común)</i></li>
+                        <li><b>D)</b> $p^3 + 6p^2 + 12p + 8$ <i>(Cubo de Binomio)</i></li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>E)</b> $(w + 9)(w - 9)$ <i>(Diferencia de Cuadrados)</i></li>
+                        <li><b>F)</b> $(k - 7)^2$ <i>(Trinomio Cuadrado Perfecto)</i></li>
+                        <li><b>G)</b> $(y + 8)(y - 3)$ <i>(Término Común: Multiplican -24, suman +5)</i></li>
+                        <li><b>H)</b> $(m + 7)(m + 6)$ <i>(Término Común: Multiplican 42, suman 13)</i></li>
+                    </ul>
+                </div>
+            `
+        }
+    ]
+},
+
+
         ]
     },
+    {
+    idUnidad: "unidad4",
+    nombreUnidad: "Unidad 4: Sistemas de Ecuaciones Lineales (2x2)",
+    clases: [
+        {
+    id: "u4_clase1",
+    nombre: "Clase 1: El Misterio de las Dos Variables y la Línea Recta",
+    diapositivas: [
+        {
+            titulo: "1. ¿Qué pasa cuando tenemos dos incógnitas?",
+            contenido: `
+                <h2>Un universo de posibilidades infinitas</h2>
+                <p>Hasta hoy, resolver una ecuación significaba encontrar <b>el</b> número exacto que cumplía una condición (ej. $2x = 10$, donde $x$ solo puede ser $5$). Pero, ¿qué sucede si tenemos una ecuación con dos letras, como $x + y = 10$?</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #3b82f6;">
+                    <h3 style="color: #3b82f6;">Pares Ordenados $(x, y)$</h3>
+                    <p>En la ecuación $x + y = 10$, no buscamos un solo número, sino <strong>parejas de números</strong> que sumen 10. Veamos algunas soluciones posibles:</p>
+                    
+                    <div class="step" style="font-size: 1.1em; margin: 15px 0; background: rgba(59, 130, 246, 0.05); padding: 15px; border-radius: 8px;">
+                        <ul style="line-height: 1.8;">
+                            <li>Si $x = 2$, entonces $y = 8$ $\\rightarrow$ Par ordenado: $(2, 8)$</li>
+                            <li>Si $x = 5$, entonces $y = 5$ $\\rightarrow$ Par ordenado: $(5, 5)$</li>
+                            <li>Si $x = -2$, entonces $y = 12$ $\\rightarrow$ Par ordenado: $(-2, 12)$</li>
+                            <li>Si $x = 1.5$, entonces $y = 8.5$ $\\rightarrow$ Par ordenado: $(1.5, 8.5)$</li>
+                        </ul>
+                    </div>
+                    <p><strong>Conclusión Clave:</strong> Una sola ecuación de la forma $ax + by = c$ tiene <b>infinitas soluciones</b> (infinitos pares ordenados).</p>
+                </div>
+            `
+        },
+        {
+            titulo: "2. Revelando la Función Oculta",
+            contenido: `
+                <h2>Transformando $ax + by = c$</h2>
+                <p>Para entender mejor cómo se comportan esos infinitos puntos, podemos "despejar la $y$". Al dejar la $y$ sola, transformamos la ecuación en una vieja conocida: la <strong>función afín</strong>.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
+                    <h3 style="color: #6d28d9;">El Despeje Paso a Paso</h3>
+                    <p>Tomemos la forma general: $$ax + by = c$$</p>
+                    
+                    <div class="step" style="background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px; line-height: 2;">
+                        <b>1. Movemos la $x$ al otro lado (restando):</b><br>
+                        $$by = -ax + c$$<br><br>
+                        <b>2. Dividimos todo por $b$:</b><br>
+                        $$y = -\\frac{a}{b}x + \\frac{c}{b}$$
+                    </div>
+                    <p style="margin-top: 15px;">¡Listo! Ahora tiene la forma $y = mx + n$. Al graficar todos sus infinitos pares ordenados en el plano cartesiano, formarán una <strong>línea recta</strong> perfecta.</p>
+                </div>
+            `
+        },
+        {
+            titulo: "3. Práctica Guiada: De Ecuación a Recta",
+            contenido: `
+                <h2>Hagámoslo Juntos</h2>
+                <p>Vamos a transformar la ecuación $2x + y = 4$, encontraremos tres soluciones y visualizaremos cómo se prepararía para ser graficada.</p>
+                
+                <div class="info-grid">
+                    <div class="card" style="border-left-color: #10b981; padding: 20px; background: rgba(16, 185, 129, 0.05);">
+                        <h3 style="color: #047857; margin-top:0;">Paso 1: Despejar $y$</h3>
+                        $$2x + y = 4$$
+                        <i>Restamos $2x$ a ambos lados:</i><br>
+                        $$y = -2x + 4$$
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #10b981; padding: 20px; background: rgba(16, 185, 129, 0.05);">
+                        <h3 style="color: #047857; margin-top:0;">Paso 2: Tabla de Valores</h3>
+                        <p>Elegimos valores para $x$ y calculamos $y$:</p>
+                        <ul style="line-height: 1.8;">
+                            <li>Si $x=0 \\rightarrow y = -2(0)+4 = \\mathbf{4}$ $\\rightarrow (0,4)$</li>
+                            <li>Si $x=1 \\rightarrow y = -2(1)+4 = \\mathbf{2}$ $\\rightarrow (1,2)$</li>
+                            <li>Si $x=2 \\rightarrow y = -2(2)+4 = \\mathbf{0}$ $\\rightarrow (2,0)$</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 15px; color: #047857; font-weight: bold; background: rgba(16, 185, 129, 0.1); padding: 10px; border-radius: 8px;">Si ubicas (0,4), (1,2) y (2,0) en un plano cartesiano y los unes, obtienes la recta que representa a la ecuación.</p>
+            `
+        },
+        {
+            titulo: "4. Práctica Independiente",
+            contenido: `
+                <h2>Tu Turno en el Plano</h2>
+                <p>Ahora es tu momento de aplicar la transformación. Tienes 10 minutos para resolver los siguientes ejercicios en tu cuaderno.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b>Para cada ecuación, debes:</b>
+                        <ol style="margin-top: 10px; line-height: 1.6;">
+                            <li>Despejar la variable $y$ (transformar a función afín).</li>
+                            <li>Encontrar 2 pares ordenados $(x, y)$ que sean solución.</li>
+                        </ol>
+                    </div>
+                    <div class="step" style="background: #f8fafc; font-size: 1.1em; line-height: 2;">
+                        <b>A)</b> $x + y = 5$<br>
+                        <b>B)</b> $3x - y = 6$<br>
+                        <b>C)</b> $4x + 2y = 8$
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">10:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(600)" style="margin-top: 15px;">⏳ Iniciar Tiempo (10 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u4_c1').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
+
+                <div id="resp-indep-u4_c1" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Oficiales:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>A)</b> Despeje: $y = -x + 5$. Posibles puntos: $(0,5), (1,4), (2,3)...$</li>
+                        <li><b>B)</b> Despeje: $-y = -3x + 6 \\rightarrow y = 3x - 6$. Posibles puntos: $(0,-6), (2,0), (1,-3)...$</li>
+                        <li><b>C)</b> Despeje: $2y = -4x + 8 \\rightarrow y = -2x + 4$. Posibles puntos: $(0,4), (1,2), (2,0)...$</li>
+                    </ul>
+                </div>
+            `
+        },
+        {
+            titulo: "5. Ticket de Salida",
+            contenido: `
+                <h2>Demuestra tu aprendizaje</h2>
+                <p>Responde estas preguntas breves antes de terminar la clase para comprobar que has dominado los conceptos de hoy.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #eab308; background: rgba(234, 179, 8, 0.05);">
+                    <h3 style="color: #ca8a04;">Pregunta de Síntesis</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 20px;">Observa la siguiente ecuación lineal: $$5x + y = 20$$</p>
+                    
+                    <ol style="font-size: 1.1em; line-height: 1.8;">
+                        <li>¿Cuántos pares ordenados $(x,y)$ cumplen con esta ecuación? (Justifica en una línea).</li>
+                        <li>Despeja la letra $y$. ¿Cómo queda escrita como función afín?</li>
+                        <li>Si $x = 3$, ¿cuánto vale $y$?</li>
+                    </ol>
+                    
+                    <div style="text-align: center; margin-top: 25px;">
+                        <button class="btn" style="border: 2px solid #ca8a04; color: #ca8a04; background: white;" onclick="document.getElementById('ticket-resp-u4-c1').classList.toggle('hidden')">Ver Respuesta Esperada</button>
+                    </div>
+                </div>
+
+                <div id="ticket-resp-u4-c1" class="hidden" style="margin-top: 15px; padding: 15px; border-radius: 8px; border-left: 5px solid #ca8a04; background: white;">
+                    <p style="line-height: 1.8;"><b>1.</b> Tiene <b>infinitas</b> soluciones, porque para cada valor que le demos a la $x$, existirá un valor correspondiente para la $y$.<br>
+                    <b>2.</b> $y = -5x + 20$<br>
+                    <b>3.</b> Si $x=3$, entonces $y = -5(3) + 20 = -15 + 20 = \\mathbf{5}$. El par ordenado es $(3,5)$.</p>
+                </div>
+            `
+        }
+    ]
+},
+{
+    id: "u4_clase2",
+    nombre: "Clase 2: El Cruce de Caminos (Método Gráfico y Balanzas)",
+    diapositivas: [
+        {
+            titulo: "1. Un problema, dos condiciones",
+            contenido: `
+                <h2>El modelo de la balanza</h2>
+                <p>Imagina que estás en un mercado y observas dos balanzas en perfecto equilibrio. Estas balanzas representan un <strong>sistema de ecuaciones</strong>: tienes dos situaciones diferentes que involucran los mismos objetos misteriosos.</p>
+                
+                <div class="info-grid" style="margin-top: 20px;">
+                    <div class="card" style="border-left-color: #3b82f6; padding: 20px;">
+                        <h3 style="color: #1d4ed8; margin-top:0;">Balanza 1 (Condición 1)</h3>
+                        <p style="text-align: center; font-size: 1.1em; background: rgba(59, 130, 246, 0.05); padding: 10px; border-radius: 8px;">
+                            2 🍎 + 1 🍌 = 700 gramos<br>
+                            <b>$2x + y = 700$</b>
+                        </p>
+                    </div>
+                    
+                    <div class="card" style="border-left-color: #ef4444; padding: 20px;">
+                        <h3 style="color: #b91c1c; margin-top:0;">Balanza 2 (Condición 2)</h3>
+                        <p style="text-align: center; font-size: 1.1em; background: rgba(239, 68, 68, 0.05); padding: 10px; border-radius: 8px;">
+                            1 🍎 = 1 🍌 + 100 gramos<br>
+                            <b>$x = y + 100$</b>
+                        </p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px;">Resolver el sistema significa encontrar <strong>el peso exacto de la manzana ($x$) y del plátano ($y$)</strong> que mantenga <em>ambas</em> balanzas en equilibrio al mismo tiempo.</p>
+            `
+        },
+        {
+            titulo: "2. El Método Gráfico: Dibujando las pistas",
+            contenido: `
+                <h2>De las balanzas al Plano Cartesiano</h2>
+                <p>Ayer aprendimos que una ecuación con dos incógnitas ($ax + by = c$) dibuja una línea recta con infinitas soluciones. ¿Qué pasa si graficamos <strong>las dos ecuaciones de un sistema en el mismo plano</strong>?</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #8b5cf6;">
+                    <h3 style="color: #6d28d9;">La Intersección es la Clave</h3>
+                    <div class="step" style="background: rgba(139, 92, 246, 0.05); padding: 15px; border-radius: 8px; line-height: 1.8;">
+                        <ul>
+                            <li><b>La Recta Azul</b> tiene todos los puntos que cumplen la Ecuación 1.</li>
+                            <li><b>La Recta Roja</b> tiene todos los puntos que cumplen la Ecuación 2.</li>
+                        </ul>
+                        <p style="text-align: center; font-size: 1.2em; font-weight: bold; color: #4c1d95; margin-top: 10px; border-top: 1px dashed #c4b5fd; padding-top: 10px;">
+                            El único punto del universo que pertenece a ambas rectas es donde se cruzan.<br>¡Ese punto $(x, y)$ es la solución del sistema!
+                        </p>
+                    </div>
+                </div>
+            `
+        },
+        {
+            titulo: "3. Laboratorio Interactivo: Simulador Gráfico",
+            contenido: `
+                <h2>Visualizando la Intersección</h2>
+                <p>Usa la calculadora gráfica a continuación. Haz clic en la primera línea de la izquierda y escribe <b>x + y = 4</b>. Luego haz clic en la segunda línea y escribe <b>x - y = 2</b>. ¿En qué punto exacto se cruzan las dos rectas? Pista: ¡Haz clic en el cruce para ver las coordenadas!</p>
+                
+                <div style="margin-top: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); border-radius: 8px; overflow: hidden;">
+                    <iframe src="https://www.desmos.com/calculator?embed" width="100%" height="450" style="border: 1px solid #ccc;" frameborder=0></iframe>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; text-align: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;">
+                    <b>¡Analiza el resultado!</b> Si lo hiciste bien, ambas rectas se cruzan en el punto <b>$(3, 1)$</b>.<br>
+                    Comprobación matemática: ¿$3+1=4$? Sí. ¿$3-1=2$? Sí. ¡El simulador no miente!
+                </div>
+            `
+        },
+        {
+            titulo: "4. Práctica Independiente",
+            contenido: `
+                <h2>Dibuja y encuentra el cruce</h2>
+                <p>Tienes 15 minutos. Para cada sistema, despeja la $y$ en ambas ecuaciones, haz una tabla de valores rápida (2 puntos por recta) y grafícalas en tu cuaderno para hallar la solución. Puedes usar el simulador después para revisar si tu gráfico a mano quedó correcto.</p>
+                
+                <div class="info-grid">
+                    <div class="step">
+                        <b style="color: #047857;">Sistema A:</b><br><br>
+                        $$y = 2x$$ <i>(¡Ya está despejada!)</i><br>
+                        $$x + y = 6$$
+                    </div>
+                    <div class="step">
+                        <b style="color: #1d4ed8;">Sistema B:</b><br><br>
+                        $$y = x + 1$$<br>
+                        $$y = -x + 5$$
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; background: rgba(15, 23, 42, 0.05); padding: 20px; border-radius: 15px;">
+                    <div id="timer-display" style="font-size: 4rem; font-weight: bold; color: var(--primary); font-family: monospace;">15:00</div>
+                    <button class="btn btn-primary" onclick="iniciarCronometro(900)" style="margin-top: 15px;">⏳ Iniciar Tiempo (15 min)</button>
+                    <button class="btn" style="margin-top: 15px; border: 2px solid #047857; color: #047857; background: transparent;" onclick="document.getElementById('resp-indep-u4_c2').classList.toggle('hidden')">👁️ Mostrar Soluciones</button>
+                </div>
+
+                <div id="resp-indep-u4_c2" class="hidden" style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-left: 5px solid #047857; border-radius: 8px;">
+                    <h3 style="color: #047857; margin-top: 0;">Resultados Esperados:</h3>
+                    <ul style="line-height: 2; font-size: 1.1rem;">
+                        <li><b>Sistema A:</b><br>
+                        Eq 2 despejada: $y = -x + 6$.<br>
+                        La intersección en el gráfico debe darse en el punto <b>$(2, 4)$</b>.</li>
+                        <hr style="border: 1px solid #047857; opacity: 0.2; margin: 10px 0;">
+                        <li><b>Sistema B:</b><br>
+                        Ambas ya están despejadas.<br>
+                        La intersección en el gráfico debe darse en el punto <b>$(2, 3)$</b>.</li>
+                    </ul>
+                </div>
+            `
+        },
+        {
+            titulo: "5. Ticket de Salida",
+            contenido: `
+                <h2>¿Puedes leer el plano?</h2>
+                <p>Imagina que un compañero intentó resolver un sistema de ecuaciones gráficamente. Graficó la primera recta y la segunda recta en el mismo plano cartesiano.</p>
+                
+                <div class="card" style="margin-top: 20px; border-left-color: #eab308; background: rgba(234, 179, 8, 0.05);">
+                    <h3 style="color: #ca8a04;">Análisis de Gráfico</h3>
+                    <p style="font-size: 1.1em; margin-bottom: 20px;">Observas que las dos rectas dibujadas por tu compañero se cruzan exactamente en las coordenadas donde $x = -1$ y $y = 5$.</p>
+                    
+                    <ol style="font-size: 1.1em; line-height: 1.8;">
+                        <li>¿Cuál es la solución matemática de este sistema de ecuaciones? Escríbela como par ordenado.</li>
+                        <li>Si reemplazamos $x = -1$ e $y = 5$ en la primera ecuación de su problema original, ¿qué debería pasar? ¿Por qué?</li>
+                    </ol>
+                    
+                    <div style="text-align: center; margin-top: 25px;">
+                        <button class="btn" style="border: 2px solid #ca8a04; color: #ca8a04; background: white;" onclick="document.getElementById('ticket-resp-u4-c2').classList.toggle('hidden')">Ver Respuesta Esperada</button>
+                    </div>
+                </div>
+
+                <div id="ticket-resp-u4-c2" class="hidden" style="margin-top: 15px; padding: 15px; border-radius: 8px; border-left: 5px solid #ca8a04; background: white;">
+                    <p style="line-height: 1.8;"><b>1.</b> La solución es el par ordenado <b>$(-1, 5)$</b>.<br>
+                    <b>2.</b> Debería cumplirse la igualdad matemática (dar verdadero). Esto ocurre porque ese punto $(-1, 5)$ pertenece a esa recta, lo que significa que es una de sus infinitas soluciones. También debe cumplirse al reemplazar en la segunda ecuación.</p>
+                </div>
+            `
+        }
+    ]
+}
+    ]
+}
 ]
