@@ -1,14 +1,13 @@
 let claseSeleccionada = null; 
 let indexActual = 0;
 
-// 1. Cargar el Menú Principal (Agrupado por Unidades)
+
 function renderHome() {
     const grid = document.getElementById('class-grid');
     let htmlContent = '';
 
-    // Recorremos cada "carpeta" o unidad
+
     bancoDeUnidades.forEach((unidad, uIndex) => {
-        // Generamos un encabezado visual para la Unidad
         htmlContent += `
             <div style="grid-column: 1 / -1; margin-top: 20px;">
                 <h2 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; font-size: 1.8rem;">
@@ -17,10 +16,8 @@ function renderHome() {
             </div>
         `;
 
-        // Si la unidad tiene clases, generamos sus tarjetas
         if (unidad.clases && unidad.clases.length > 0) {
             unidad.clases.forEach((clase, cIndex) => {
-                // Ahora enviamos las dos "coordenadas": índice de unidad e índice de clase
                 htmlContent += `
                     <div class="class-card" onclick="iniciarClase(${uIndex}, ${cIndex})">
                         <h2>${clase.nombre}</h2>
@@ -29,7 +26,6 @@ function renderHome() {
                 `;
             });
         } else {
-            // Mensaje temporal si la unidad aún está vacía
             htmlContent += `
                 <div style="grid-column: 1 / -1; color: #94a3b8; font-style: italic;">
                     Contenido en desarrollo para esta unidad...
@@ -40,10 +36,7 @@ function renderHome() {
 
     grid.innerHTML = htmlContent;
 }
-
-// 2. Entrar a una Clase (Actualizado para recibir las dos coordenadas)
 function iniciarClase(uIndex, cIndex) {
-    // Buscamos la clase exacta dentro de la unidad seleccionada
     claseSeleccionada = bancoDeUnidades[uIndex].clases[cIndex];
     indexActual = 0;
     
@@ -53,14 +46,12 @@ function iniciarClase(uIndex, cIndex) {
     mostrarContenido();
 }
 
-// 3. Volver al Menú
 function volverAlInicio() {
     if(typeof timerInterval !== 'undefined') clearInterval(timerInterval); 
     document.getElementById('app-screen').classList.add('hidden');
     document.getElementById('home-screen').classList.remove('hidden');
 }
 
-// 4. Lógica interna de la clase (Se mantiene intacta)
 function renderSidebar() {
     const list = document.getElementById('module-list');
     if (!list || !claseSeleccionada) return;
@@ -117,6 +108,4 @@ function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar) sidebar.classList.toggle('collapsed');
 }
-
-// Iniciar cargando el menú principal
 window.onload = renderHome;
