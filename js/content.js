@@ -1,4 +1,4 @@
-// Funciones Universales (Sirven para todas las clases y unidades)
+
 function checkRes(isCorrect, msgSuccess, msgError) {
     const f = document.getElementById('feedback');
     f.classList.remove('hidden');
@@ -26,10 +26,6 @@ function iniciarCronometro(segundos) {
         tiempo--;
     }, 1000);
 }
-
-// ---------------------------------------------------
-// EL BANCO DE CLASES (Aquí guardaremos todo tu material)
-// ---------------------------------------------------
 const bancoDeUnidades = [
     {
         idUnidad: "unidad1",
