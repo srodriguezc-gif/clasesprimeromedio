@@ -1,11 +1,10 @@
 :root {
-    /* Paleta Optimizada para Proyector (Tema Claro) */
-    --primary: #1d4ed8; /* Azul rey fuerte: excelente visibilidad y contraste */
-    --accent: #b45309; /* Ámbar/Naranja oscuro: resalta sin perderse en el brillo */
-    --bg-main: #ffffff; /* Blanco puro para aprovechar la luz del proyector */
-    --card-bg: #f8fafc; /* Gris nieve: separa sutilmente la tarjeta del fondo */
-    --text-main: #0f172a; /* Pizarra muy oscuro: máximo contraste para lectura */
-    --border-color: #cbd5e1; /* Gris medio para delinear elementos claramente */
+    --primary: #1d4ed8; 
+    --accent: #b45309; 
+    --bg-main: #ffffff; 
+    --card-bg: #f8fafc; 
+    --text-main: #0f172a; 
+    --border-color: #cbd5e1; 
 }
 
 body {
@@ -22,9 +21,9 @@ body {
 
 .sidebar {
     width: 300px;
-    background: #f1f5f9; /* Gris muy claro, no compite con el contenido */
+    background: #f1f5f9; 
     padding: 20px;
-    border-right: 2px solid var(--border-color); /* Borde más grueso para el proyector */
+    border-right: 2px solid var(--border-color); 
     transition: width 0.3s ease, padding 0.3s ease;
     overflow-x: hidden;
     white-space: nowrap;
@@ -39,7 +38,7 @@ body {
     transition: 0.3s;
     font-size: 1.1rem;
     color: var(--text-main);
-    border: 1px solid transparent; /* Prepara el espacio para el hover/active */
+    border: 1px solid transparent; 
 }
 
 .sidebar li:hover {
@@ -62,7 +61,7 @@ body {
 
 #class-title { 
     font-size: 3.5rem; 
-    color: var(--primary); /* Cambiado a primary porque el amarillo/naranja puede costar leerse de lejos */
+    color: var(--primary); 
     margin-bottom: 20px; 
     font-weight: bold;
 }
@@ -71,18 +70,17 @@ body {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 20px;
-    /* Se mantiene una sombra suave, pero se añade un borde general para asegurar el contraste */
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
     border-left: 10px solid var(--primary);
 }
 
 .step {
-    background: rgba(0, 0, 0, 0.03); /* Fondo oscuro muy sutil */
+    background: rgba(0, 0, 0, 0.03);
     margin: 10px 0;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid var(--border-color); /* Borde estricto para que el proyector no lo borre */
+    border: 1px solid var(--border-color); 
 }
 
 .btn {
@@ -99,18 +97,17 @@ body {
 .btn-primary { 
     background: var(--primary); 
     color: white; 
-    box-shadow: 0 4px 6px rgba(29, 78, 216, 0.3); /* Sombra azul para darle volumen */
+    box-shadow: 0 4px 6px rgba(29, 78, 216, 0.3); 
 }
 
 .btn-primary:hover {
-    background: #1e40af; /* Azul más oscuro al pasar el mouse */
+    background: #1e40af; 
 }
 
 .interact-box { display: flex; gap: 20px; margin-top: 20px; }
 
 .hidden { display: none !important; }
 
-/* Colores de feedback más oscuros para fondo blanco */
 .success { color: #15803d; font-weight: bold; margin-top: 20px; } 
 .error { color: #b91c1c; font-weight: bold; margin-top: 20px; } 
 
@@ -123,7 +120,7 @@ body {
 .btn-toggle {
     background: var(--card-bg);
     color: var(--text-main);
-    border: 2px solid var(--border-color); /* Borde más fuerte */
+    border: 2px solid var(--border-color); 
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
@@ -147,8 +144,6 @@ body {
     gap: 20px;
     margin-top: 20px;
 }
-
-/* --- ESTILOS PARA EL MENÚ DE INICIO --- */
 .home-container {
     width: 100%;
     height: 100vh;
@@ -170,7 +165,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     border: 1px solid var(--border-color);
-    border-top: 8px solid var(--primary); /* Borde superior más grueso */
+    border-top: 8px solid var(--primary); 
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
@@ -180,11 +175,11 @@ body {
 .class-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    border-top: 8px solid var(--accent); /* Cambia al color de acento al pasar el mouse */
+    border-top: 8px solid var(--accent); 
 }
 
 .class-card h2 { 
-    color: var(--text-main); /* Cambiado para que se lea en el fondo claro */
+    color: var(--text-main);
     margin-bottom: 10px;
     font-weight: bold;
 }
