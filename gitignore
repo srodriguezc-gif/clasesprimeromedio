@@ -1,0 +1,29 @@
+# Archivos de entorno (¡MUY IMPORTANTE!)
+.env
+.env.local
+.env.production
+.env.development
+
+# Dependencias instaladas (no las subas)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales de editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Carpetas de Vercel / Next.js (si las usas en el futuro)
+.vercel/
+.next/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
