@@ -236,7 +236,7 @@ async function enviarMensajeIA() {
     cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
 
     try {
-        const res = await fetch('/api/consultar', {
+        const res = await fetch('/consultar', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ pregunta: mensajeTexto })
