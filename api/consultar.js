@@ -1,39 +1,42 @@
-async function enviarMensajeIA() {
-    const input = document.getElementById('input-chat-ia');
-    const cajaMensajes = document.getElementById('chat-mensajes');
-    
-    const mensajeTexto = input.value.trim();
-    if (!mensajeTexto) return;
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-    cajaMensajes.innerHTML += `<div class="mensaje usuario">${mensajeTexto}</div>`;
-    input.value = '';
-
-    const idPensando = "pensando-" + Date.now();
-    cajaMensajes.innerHTML += `<div id="${idPensando}" class="mensaje ia">Escribiendo... ✍️</div>`;
-    cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
+export default async function handler(req, res) {
+    // 1. Vercel solo debe aceptar peticiones POST desde tu chat
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Método no permitido' });
+    }
 
     try {
-        const res = await fetch('/api/consultar', {   // ←←← Ruta relativa (importante)
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pregunta: mensajeTexto })
-        });
+        const { pregunta } = req.body;
 
-        if (!res.ok) throw new Error('Error del servidor');
+        // 2. Verificamos que le hayas puesto la contraseña a Vercel
+        if (!process.env.GEMINI_API_KEY) {
+            console.error("Falta la variable GEMINI_API_KEY en Vercel");
+            return res.status(500).json({ error: "Falta la clave de API" });
+        }
 
-        const data = await res.json();
+        // 3. Conectamos con Google Gemini
+        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+        // Usamos el modelo flash que es el más rápido para chats
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); 
 
-        document.getElementById(idPensando).remove();
+        // 4. Le damos una personalidad de Profesor al Tutor
+        const prompt = `Eres un tutor de matemáticas amigable, paciente y experto del colegio Nocedal. 
+        Responde a la siguiente duda del estudiante de forma clara, didáctica y no muy larga. 
+        Pregunta del alumno: ${pregunta}`;
 
-        const textoFormateado = (data.respuesta || "No recibí respuesta.").replace(/\n/g, "<br>");
-        cajaMensajes.innerHTML += `<div class="mensaje ia">${textoFormateado}</div>`;
+        // 5. Pedimos la respuesta y la enviamos de vuelta a tu página
+        const result = await model.generateContent(prompt);
+        const respuestaIA = result.response.text();
 
-        if (window.MathJax) MathJax.typesetPromise().catch(() => {});
+        return res.status(200).json({ respuesta: respuestaIA });
 
-    } catch (err) {
-        document.getElementById(idPensando).remove();
-        cajaMensajes.innerHTML += `<div class="mensaje ia" style="color:#ef4444;">❌ Error de conexión con el Tutor IA</div>`;
+    } catch (error) {
+        // Si algo falla, Vercel nos avisará aquí en sus registros
+        console.error("Error interno en el servidor de Vercel:", error);
+        return res.status(500).json({ error: "Error al comunicarse con la IA" });
     }
+}
 
     cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
 }
