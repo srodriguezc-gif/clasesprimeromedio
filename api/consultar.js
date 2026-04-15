@@ -1,6 +1,6 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     // 1. Vercel solo debe aceptar peticiones POST desde tu chat
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Método no permitido' });
@@ -36,7 +36,4 @@ export default async function handler(req, res) {
         console.error("Error interno en el servidor de Vercel:", error);
         return res.status(500).json({ error: "Error al comunicarse con la IA" });
     }
-}
-
-    cajaMensajes.scrollTop = cajaMensajes.scrollHeight;
-}
+};
