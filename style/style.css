@@ -274,3 +274,113 @@ body {
     height: 40px;
     cursor: pointer;
 }
+/* ====================== ESTILOS NUEVOS (para eliminar inline) ====================== */
+
+.title-main {
+    color: var(--accent);
+    text-align: center;
+    font-size: 3rem;
+    margin: 50px 0 30px 0;
+}
+
+.sidebar-title {
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Barra de progreso */
+.progress-container {
+    height: 10px;
+    background: #334155;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Botones superiores */
+.top-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Botones de navegación inferior */
+.navigation-buttons {
+    margin-top: auto;
+    padding-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Contenido dinámico */
+.dynamic-content {
+    flex: 1;
+}
+
+/* Ajustes para el chat (mejor compatibilidad con tu tema claro) */
+.chat-window {
+    width: 420px;
+    height: 520px;
+    background: white;
+    border: 1px solid var(--border-color);
+}
+
+.chat-header {
+    background: #8b5cf6;
+    color: white;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.btn-enviar-chat {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Pequeños ajustes de mejora */
+.class-title {
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Asegurar que el body no tenga scroll doble */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.home-container {
+    overflow-y: auto;
+}
