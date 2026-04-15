@@ -1,5 +1,5 @@
 
-let claseSeleccionada = null; 
+claseSeleccionada = null;
 let indexActual = 0;
 
 // 1. Cargar el Menú Principal (Agrupado por Unidades)
