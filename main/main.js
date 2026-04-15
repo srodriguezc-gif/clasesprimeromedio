@@ -15,26 +15,32 @@ function renderHome() {
     let htmlContent = '';
 
     bancoDeUnidades.forEach((unidad, uIndex) => {
+        // Encabezado de Unidad (Ocupa todo el ancho y usa la etiqueta naranja)
         htmlContent += `
-            <div class="unidad-header">
-                <h2>${unidad.nombreUnidad}</h2>
+            <div class="unidad-header" style="grid-column: 1 / -1; margin-top: 40px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
+                <span class="etiqueta-unidad">Sección de Estudio</span>
+                <h2 style="color: var(--text-main); margin-top: 10px; font-weight: bold;">${unidad.nombreUnidad}</h2>
             </div>
         `;
 
+        // Tarjetas de clases
         if (unidad.clases && unidad.clases.length > 0) {
             unidad.clases.forEach((clase, cIndex) => {
                 const cantidad = clase.diapositivas ? clase.diapositivas.length : 0;
+                
+                // Usamos la etiqueta azul (etiqueta-tema) para las clases
                 htmlContent += `
                     <div class="class-card" onclick="iniciarClase(${uIndex}, ${cIndex})">
-                        <h2>${clase.nombre}</h2>
-                        <p class="slide-count">${cantidad} diapositivas</p>
+                        <span class="etiqueta-tema">Tema Principal</span>
+                        <h2 style="margin-top: 15px;">${clase.nombre}</h2>
+                        <p class="slide-count" style="color: #64748b; font-weight: bold; margin-top: 15px;">📚 ${cantidad} diapositivas</p>
                     </div>
                 `;
             });
         } else {
             htmlContent += `
-                <div class="unidad-vacia">
-                    Contenido en desarrollo para esta unidad...
+                <div class="unidad-vacia" style="grid-column: 1 / -1; text-align: center; color: #64748b; padding: 20px; font-style: italic;">
+                    ⏳ Contenido en desarrollo para esta unidad...
                 </div>
             `;
         }
