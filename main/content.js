@@ -45,7 +45,6 @@ function iniciarCronometro(segundos) {
 }
 
 // Exportar bancoDeUnidades para que main.js pueda usarlo
-window.bancoDeUnidades = bancoDeUnidades;
 const bancoDeUnidades = [
     {
         idUnidad: "unidad1",
