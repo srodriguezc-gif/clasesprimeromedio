@@ -377,3 +377,32 @@ body {
 html {
     scroll-behavior: smooth; /* Un pequeño toque extra: hace que el scroll sea más suave */
 }
+/* ====================== ETIQUETAS DE UNIDAD ====================== */
+.etiqueta-unidad {
+    display: inline-block;
+    background-color: var(--accent); /* Usa tu color naranja/ámbar */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Una variante azul por si tienes sub-temas o quieres variar */
+.etiqueta-tema {
+    display: inline-block;
+    background-color: var(--primary); /* Usa tu color azul rey */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
