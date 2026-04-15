@@ -1,35 +1,51 @@
-// Funciones Universales (Sirven para todas las clases y unidades)
+// ====================== content.js ======================
+// Funciones Universales
+
 function checkRes(isCorrect, msgSuccess, msgError) {
     const f = document.getElementById('feedback');
+    if (!f) return;
+
     f.classList.remove('hidden');
-    if(isCorrect) {
-        f.innerHTML = msgSuccess;
+    if (isCorrect) {
+        f.innerHTML = msgSuccess || '¡Correcto!';
         f.className = "success";
     } else {
-        f.innerHTML = msgError;
+        f.innerHTML = msgError || 'Incorrecto. Inténtalo de nuevo.';
         f.className = "error";
     }
 }
 
-let timerInterval;
 function iniciarCronometro(segundos) {
-    clearInterval(timerInterval); 
+    // timerInterval se declara en main.js (variable global)
+    if (typeof timerInterval !== 'undefined') {
+        clearInterval(timerInterval);
+    }
+
     let tiempo = segundos;
+
     timerInterval = setInterval(() => {
         const display = document.getElementById('timer-display');
-        if (!display) { clearInterval(timerInterval); return; }
-        let min = Math.floor(tiempo / 60);
-        let seg = tiempo % 60;
+        if (!display) {
+            clearInterval(timerInterval);
+            return;
+        }
+
+        const min = Math.floor(tiempo / 60);
+        const seg = tiempo % 60;
         display.innerText = `${min < 10 ? '0' : ''}${min}:${seg < 10 ? '0' : ''}${seg}`;
-        if (tiempo <= 60 && tiempo > 0) display.style.color = "#ef4444"; 
-        if (tiempo <= 0) { clearInterval(timerInterval); display.innerText = "¡TIEMPO AGOTADO! 🛑"; }
+
+        if (tiempo <= 60 && tiempo > 0) display.style.color = "#ef4444";
+        if (tiempo <= 0) {
+            clearInterval(timerInterval);
+            display.innerText = "¡TIEMPO AGOTADO! 🛑";
+            display.style.color = "#ef4444";
+        }
         tiempo--;
     }, 1000);
 }
 
-// ---------------------------------------------------
-// EL BANCO DE CLASES (Aquí guardaremos todo tu material)
-// ---------------------------------------------------
+// Exportar bancoDeUnidades para que main.js pueda usarlo
+window.bancoDeUnidades = bancoDeUnidades;
 const bancoDeUnidades = [
     {
         idUnidad: "unidad1",
