@@ -14,16 +14,17 @@ export default async function handler(req, res) {
         }
 
         if (!process.env.GEMINI_API_KEY) {
-            console.error("GEMINI_API_KEY no está configurada");
-            return res.status(500).json({ error: "Clave de API no configurada en el servidor" });
+            console.error("GEMINI_API_KEY no configurada");
+            return res.status(500).json({ error: "Clave de API no configurada" });
         }
 
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+        // ←←← CAMBIO PRINCIPAL: Usamos gemini-1.5-flash (más estable)
         const model = genAI.getGenerativeModel({
-            model: "gemini-2.5-flash",
+            model: "gemini-1.5-flash",
             systemInstruction: `Eres un tutor de matemáticas amigable y experto para estudiantes de secundaria en Chile. 
-            Guía paso a paso, usa lenguaje claro y motivador. Nunca des la respuesta final sin explicar.`
+            Guía paso a paso, usa lenguaje claro y motivador. Nunca des la respuesta final sin explicar el razonamiento.`
         });
 
         const result = await model.generateContent(pregunta);
@@ -34,8 +35,10 @@ export default async function handler(req, res) {
 
     } catch (error) {
         console.error("Error en /api/consultar:", error.message);
+        
+        // Mensaje más amigable para el usuario
         res.status(500).json({ 
-            error: "Error interno del servidor al procesar la consulta con IA." 
+            error: "El tutor está muy ocupado en este momento. Por favor, intenta de nuevo en unos segundos." 
         });
     }
 }
