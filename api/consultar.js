@@ -1,7 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 module.exports = async function handler(req, res) {
-    // Solo permitimos método POST
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Método no permitido' });
     }
@@ -9,13 +8,13 @@ module.exports = async function handler(req, res) {
     try {
         const { pregunta } = req.body;
 
-        // VERIFICAMOS LA CLAVE DE API
+        // Chismoso 1: Revisamos si Vercel realmente está leyendo la clave
         if (!process.env.GEMINI_API_KEY) {
-            console.error("Error: GEMINI_API_KEY no está configurada en Vercel.");
-            return res.status(500).json({ error: "Falta la clave de API" });
+            return res.status(500).json({ 
+                error: "DEBUG 1: Vercel NO está leyendo la variable GEMINI_API_KEY. Falta hacer el Redeploy o el nombre está mal escrito." 
+            });
         }
 
-        // Conexión con Gemini
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); 
 
@@ -29,7 +28,10 @@ module.exports = async function handler(req, res) {
         return res.status(200).json({ respuesta: respuestaIA });
 
     } catch (error) {
-        console.error("Error interno del servidor:", error);
-        return res.status(500).json({ error: "Error al comunicarse con la IA" });
+        // Chismoso 2: Si Google rechaza la conexión, nos dirá el motivo exacto
+        console.error("Error real:", error);
+        return res.status(500).json({ 
+            error: "DEBUG 2: Error de Google Gemini -> " + (error.message || "Error desconocido")
+        });
     }
 };
