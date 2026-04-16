@@ -13,8 +13,6 @@ module.exports = async function handler(req, res) {
         }
 
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-        
-        // ¡AQUÍ ESTÁ LA MAGIA! Cambiamos a un modelo universal
         const model = genAI.getGenerativeModel({ model: "gemini-pro" }); 
 
         const prompt = `Eres un tutor de matemáticas amigable, paciente y experto del colegio Nocedal. 
