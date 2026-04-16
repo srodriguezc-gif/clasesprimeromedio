@@ -1,7 +1,4 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-
 module.exports = async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Método no permitido' });
